@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 106 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Stars Row" clip-path="url(#clip0_0_104)">
+<path id="Icon" d="M3.4425 18L4.905 11.3447L0 6.86842L6.48 6.27632L9 0L11.52 6.27632L18 6.86842L13.095 11.3447L14.5575 18L9 14.4711L3.4425 18V18" fill="var(--fill-0, #FFD700)"/>
+<path id="Icon_2" d="M25.4425 18L26.905 11.3447L22 6.86842L28.48 6.27632L31 0L33.52 6.27632L40 6.86842L35.095 11.3447L36.5575 18L31 14.4711L25.4425 18V18" fill="var(--fill-0, #FFD700)"/>
+<path id="Icon_3" d="M47.4425 18L48.905 11.3447L44 6.86842L50.48 6.27632L53 0L55.52 6.27632L62 6.86842L57.095 11.3447L58.5575 18L53 14.4711L47.4425 18V18" fill="var(--fill-0, #FFD700)"/>
+<path id="Icon_4" d="M69.4425 18L70.905 11.3447L66 6.86842L72.48 6.27632L75 0L77.52 6.27632L84 6.86842L79.095 11.3447L80.5575 18L75 14.4711L69.4425 18V18" fill="var(--fill-0, #FFD700)"/>
+<path id="Icon_5" d="M91.4425 18L92.905 11.3447L88 6.86842L94.48 6.27632L97 0L99.52 6.27632L106 6.86842L101.095 11.3447L102.557 18L97 14.4711L91.4425 18V18" stroke="var(--stroke-0, #FFD700)" stroke-linejoin="bevel"/>
+</g>
+<defs>
+<clipPath id="clip0_0_104">
+<rect width="106" height="18" fill="white"/>
+</clipPath>
+</defs>
+</svg>

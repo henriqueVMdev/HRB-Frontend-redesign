@@ -141,13 +141,13 @@ function resultCard(product) {
 
   return `
     <article class="result-card">
-      <div class="result-image">
+      <a class="result-image" href="produto.html?id=${product.id}">
         <img src="${product.image}" alt="${product.name}" />
         <span>${product.tag}</span>
-      </div>
+      </a>
       <div class="result-info">
         <div>
-          <h2>${product.name}</h2>
+          <h2><a href="produto.html?id=${product.id}">${product.name}</a></h2>
           <div class="result-meta">
             <span>OEM: ${product.oem}</span>
             <b></b>
