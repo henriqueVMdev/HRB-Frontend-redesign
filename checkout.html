@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Finalizacao de compra HRB Imports Auto Parts com carrinho, dados do cliente e compra protegida."
+    />
+    <title>Meu Carrinho | HRB Imports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="checkout-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Voltar para HRB Imports">
+        <img src="assets/top-logo.svg" alt="HRB Imports" />
+      </a>
+      <div class="header-actions checkout-actions">
+        <a class="text-action" href="checkout.html">
+          <span>Meu Carrinho</span>
+          <strong id="checkoutHeaderTotal">R$ 0,00</strong>
+        </a>
+        <button class="text-action" type="button">Minha Conta</button>
+      </div>
+    </header>
+
+    <main class="checkout-main">
+      <section class="checkout-card" aria-labelledby="checkoutTitle">
+        <div class="section-title checkout-title">
+          <span></span>
+          <h1 id="checkoutTitle">Meu Carrinho</h1>
+        </div>
+
+        <section class="checkout-products" aria-label="Produtos no carrinho">
+          <div class="checkout-rail" id="checkoutItems"></div>
+          <div class="checkout-scrollbar" aria-hidden="true">
+            <span></span>
+          </div>
+          <strong class="checkout-total" id="checkoutTotal">Total : R$ 0,00</strong>
+        </section>
+
+        <form class="checkout-form" id="checkoutForm">
+          <label>
+            <span>Primeiro Nome</span>
+            <input type="text" name="firstName" placeholder="Example" required />
+          </label>
+          <label>
+            <span>Sobrenome</span>
+            <input type="text" name="lastName" placeholder="Example" required />
+          </label>
+          <label class="wide">
+            <span>CPF/CNPJ</span>
+            <input type="text" name="document" placeholder="Example" required />
+          </label>
+          <label class="wide">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="example@gmail.com" required />
+          </label>
+          <label>
+            <span>Estado</span>
+            <input type="text" name="state" placeholder="Example" required />
+          </label>
+          <label>
+            <span>Cidade</span>
+            <input type="text" name="city" placeholder="Example" required />
+          </label>
+          <label>
+            <span>CEP</span>
+            <input type="text" name="postalCode" placeholder="Example" required />
+          </label>
+          <label>
+            <span>Celular</span>
+            <input type="tel" name="phone" placeholder="Example" required />
+          </label>
+        </form>
+
+        <p class="payment-note">Compra garantida pelo Mercado Pago!!</p>
+
+        <div class="checkout-cta-row">
+          <button class="checkout-submit" type="submit" form="checkoutForm">Finalizar compra</button>
+          <img class="mercado-pago" src="assets/mercado-pago.svg" alt="Mercado Pago" />
+        </div>
+
+        <p class="checkout-message" id="checkoutMessage" role="status"></p>
+      </section>
+    </main>
+
+    <script src="checkout.js" defer></script>
+  </body>
+</html>

@@ -2,6 +2,7 @@ const currency = new Intl.NumberFormat("pt-BR", {
   style: "currency",
   currency: "BRL",
 });
+const CART_STORAGE_KEY = "hrb-cart";
 
 const products = [
   {
@@ -111,7 +112,7 @@ const products = [
 ];
 
 let activeCategory = "";
-const cart = new Map();
+const cart = new Map(loadStoredCart());
 
 const bestSellers = document.querySelector("#bestSellers");
 const promotions = document.querySelector("#promotions");
@@ -194,7 +195,20 @@ function cartTotalValue() {
   }, 0);
 }
 
+function loadStoredCart() {
+  try {
+    return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function saveStoredCart() {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([...cart.entries()]));
+}
+
 function renderCart() {
+  saveStoredCart();
   const total = cartTotalValue();
   cartTotal.textContent = currency.format(total);
   drawerTotal.textContent = currency.format(total);
