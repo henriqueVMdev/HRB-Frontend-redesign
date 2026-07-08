@@ -931,9 +931,11 @@ a {
 .signup-page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.08), transparent 20rem),
-    repeating-radial-gradient(ellipse at 35% 25%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 18px),
+    linear-gradient(rgba(20, 20, 20, 0.08), rgba(20, 20, 20, 0.08)),
+    url("assets/topographic-bg.svg"),
     #141414;
+  background-size: auto, 520px 360px, auto;
+  background-position: center top;
 }
 
 .signup-main {
