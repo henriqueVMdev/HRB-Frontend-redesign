@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Resultados de busca HRB Imports com filtros por montadora, modelo, ano, motor, categoria, marca e preco."
+    />
+    <title>Resultados | HRB Imports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="results-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="HRB Imports">
+        <img src="assets/top-logo.svg" alt="HRB Imports" />
+      </a>
+      <div class="header-actions checkout-actions">
+        <a class="text-action" href="checkout.html">
+          <span>Meu Carrinho</span>
+          <strong id="resultsHeaderTotal">R$ 0,00</strong>
+        </a>
+        <a class="text-action" href="cadastro.html">Minha Conta</a>
+      </div>
+    </header>
+
+    <main class="results-layout">
+      <aside class="filter-sidebar" aria-label="Filtros">
+        <form id="resultsFilterForm" class="filter-form">
+          <label class="filter-field">
+            <span>Busca</span>
+            <input type="search" name="q" value="Trocador de Calor" />
+          </label>
+
+          <section class="filter-panel">
+            <h2>Filtros</h2>
+
+            <label class="filter-field">
+              <span>Montadora</span>
+              <select name="brand">
+                <option value="">Marca</option>
+                <option>BMW</option>
+                <option>Mercedes-Benz</option>
+                <option>Audi</option>
+                <option>Volkswagen</option>
+              </select>
+            </label>
+
+            <img class="filter-brand-logo" src="assets/filter-bmw-logo.svg" alt="BMW" />
+
+            <label class="filter-field">
+              <span>Modelo</span>
+              <select name="model">
+                <option value="">Selecione Modelo</option>
+                <option>320i</option>
+                <option>X1</option>
+                <option>C180</option>
+                <option>A3</option>
+              </select>
+            </label>
+
+            <label class="filter-field">
+              <span>Ano</span>
+              <select name="year">
+                <option value="">Selecione Ano</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+              </select>
+            </label>
+
+            <label class="filter-field">
+              <span>Motor</span>
+              <select name="engine">
+                <option value="">Selecione Motor</option>
+                <option>2.0 Turbo</option>
+                <option>1.8 TFSI</option>
+                <option>Flex</option>
+              </select>
+            </label>
+
+            <fieldset class="filter-checks">
+              <legend>Categorias</legend>
+              <label><input type="checkbox" name="category" value="Sistema de Freio" /> Sistema de freio</label>
+              <label><input type="checkbox" name="category" value="Suspensao dianteira" /> Suspensao dianteira</label>
+              <label><input type="checkbox" name="category" value="Suspensao traseira" /> Suspensao traseira</label>
+              <label><input type="checkbox" name="category" value="Motor" /> Motor</label>
+            </fieldset>
+
+            <fieldset class="filter-checks">
+              <legend>Marcas</legend>
+              <label><input type="checkbox" name="maker" value="HRB" /> HRB</label>
+              <label><input type="checkbox" name="maker" value="Bosch" /> Bosch</label>
+              <label><input type="checkbox" name="maker" value="Febi" /> Febi</label>
+              <label><input type="checkbox" name="maker" value="Hengst" /> Hengst</label>
+            </fieldset>
+
+            <div class="price-filter">
+              <span>Alcance de Preco</span>
+              <div>
+                <input type="number" name="minPrice" placeholder="0000" min="0" />
+                <b></b>
+                <input type="number" name="maxPrice" placeholder="0000" min="0" />
+              </div>
+            </div>
+
+            <button class="filter-apply" type="submit">Aplicar</button>
+            <button class="filter-clear" type="button" id="clearResultsFilters">Limpar tudo</button>
+          </section>
+        </form>
+      </aside>
+
+      <section class="results-content" aria-labelledby="resultsTitle">
+        <div class="section-title results-title">
+          <span></span>
+          <h1 id="resultsTitle">Resultados</h1>
+        </div>
+        <div class="results-list" id="resultsList"></div>
+      </section>
+    </main>
+
+    <script src="resultados.js" defer></script>
+  </body>
+</html>

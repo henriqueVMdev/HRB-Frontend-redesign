@@ -280,8 +280,15 @@ document.addEventListener("click", (event) => {
 
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  renderProducts();
-  document.querySelector("#mais-vendidos").scrollIntoView({ behavior: "smooth", block: "start" });
+  const params = new URLSearchParams();
+  const filters = currentFilters();
+
+  if (filters.query) params.set("q", filters.query);
+  if (filters.brand) params.set("brand", filters.brand);
+  if (filters.model) params.set("model", filters.model);
+  if (filters.year) params.set("year", filters.year);
+
+  window.location.href = `resultados.html${params.toString() ? `?${params.toString()}` : ""}`;
 });
 
 document.querySelector("#cartButton").addEventListener("click", () => {
