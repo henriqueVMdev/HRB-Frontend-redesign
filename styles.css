@@ -1140,6 +1140,109 @@ a {
   font-weight: 700;
 }
 
+.login-card {
+  width: min(512px, 100%);
+  min-height: 640px;
+  align-content: center;
+  padding: 44px 56px;
+}
+
+.login-logo {
+  width: 219px;
+  height: 166px;
+  margin-bottom: 48px;
+}
+
+.login-heading {
+  margin-bottom: 16px;
+}
+
+.login-form {
+  display: grid;
+  gap: 16px;
+  width: min(306px, 100%);
+}
+
+.login-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.login-form label > span {
+  padding-left: 24px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.login-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 24px;
+  border: 1px solid #646464;
+  border-radius: 32px;
+  outline: 0;
+  background: #282828;
+  color: var(--white);
+}
+
+.login-form input::placeholder {
+  color: #646464;
+}
+
+.login-form input:focus {
+  border-color: var(--yellow);
+}
+
+.login-register-block {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 8px 48px 0;
+}
+
+.login-register-block p {
+  margin: 0;
+  color: #646464;
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-register-button,
+.login-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.login-register-button {
+  border: 1px solid var(--white);
+  background: #141414;
+  color: var(--white);
+}
+
+.login-register-button:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.login-submit {
+  border: 2px solid #ffef56;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    var(--yellow);
+  background-size: 18px 18px, auto;
+  color: var(--black);
+}
+
 .results-page {
   min-height: 100vh;
   background:
@@ -2160,6 +2263,20 @@ a {
 
   .signup-submit {
     font-size: 20px;
+  }
+
+  .login-card {
+    padding: 32px 20px;
+  }
+
+  .login-logo {
+    width: 172px;
+    height: 130px;
+    margin-bottom: 32px;
+  }
+
+  .login-register-block {
+    padding-inline: 24px;
   }
 
   .result-card {

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login HRB Imports para acessar conta, carrinho e condicoes exclusivas." />
+    <title>Login | HRB Imports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="signup-page">
+    <main class="signup-main">
+      <section class="signup-card login-card" aria-labelledby="loginTitle">
+        <a class="signup-logo login-logo" href="index.html" aria-label="Voltar para HRB Imports">
+          <img src="assets/signup-logo.svg" alt="HRB Imports Auto Parts" />
+        </a>
+
+        <header class="signup-heading login-heading">
+          <h1 id="loginTitle">Login</h1>
+          <p>Acesse sua conta para continuar comprando</p>
+        </header>
+
+        <form class="login-form" id="loginForm">
+          <label>
+            <span>Login</span>
+            <input type="email" name="email" placeholder="Example.@Email.com" autocomplete="email" required />
+          </label>
+
+          <label>
+            <span>Senha</span>
+            <input type="password" name="password" placeholder="Example123" autocomplete="current-password" required />
+          </label>
+
+          <div class="login-register-block">
+            <p>Nao tem uma conta?</p>
+            <a class="login-register-button" href="cadastro.html">Cadastrar</a>
+          </div>
+
+          <button class="login-submit" type="submit">Login</button>
+        </form>
+
+        <p class="signup-message" id="loginMessage" role="status"></p>
+      </section>
+    </main>
+
+    <script src="login.js" defer></script>
+  </body>
+</html>
