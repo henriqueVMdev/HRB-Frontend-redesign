@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HRB Imports Auto Parts - pecas premium para oficinas, com busca por codigo OEM, marca, modelo e ano."
+    />
+    <title>HRB Imports Auto Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="HRB Imports">
+        <img src="assets/top-logo.svg" alt="HRB Imports" />
+      </a>
+      <nav class="desktop-nav" aria-label="Principal">
+        <a href="#categorias">Categorias</a>
+        <a href="#mais-vendidos">Mais vendidos</a>
+        <a href="#promocoes">Promocoes</a>
+        <a href="#atendimento">Atendimento</a>
+      </nav>
+      <div class="header-actions">
+        <button class="text-action" type="button" id="cartButton">
+          <span>Meu Carrinho</span>
+          <strong id="cartTotal">R$ 0,00</strong>
+        </button>
+        <button class="text-action" type="button">Login</button>
+        <button class="menu-button" type="button" id="menuToggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-label="Destaque principal">
+        <img class="hero-image" src="assets/hero-banner.png" alt="Buchas para bracos e bandejas HRB Imports" />
+      </section>
+
+      <section class="search-shell" aria-label="Busca de pecas">
+        <form class="part-search" id="searchForm">
+          <label class="full-field">
+            <span>Nome da peca ou codigo original</span>
+            <input id="searchInput" name="search" type="search" placeholder="Ex: Turbocharger Garrett GT35" />
+          </label>
+          <label>
+            <span>Marca</span>
+            <select id="brandSelect" name="brand">
+              <option value="">Todas</option>
+              <option>BMW</option>
+              <option>Mercedes-Benz</option>
+              <option>Audi</option>
+              <option>Volkswagen</option>
+            </select>
+          </label>
+          <label>
+            <span>Modelo</span>
+            <select id="modelSelect" name="model">
+              <option value="">Todos</option>
+              <option>320i</option>
+              <option>X1</option>
+              <option>C180</option>
+              <option>A3</option>
+              <option>Jetta</option>
+            </select>
+          </label>
+          <label>
+            <span>Ano</span>
+            <select id="yearSelect" name="year">
+              <option value="">Todos</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+            </select>
+          </label>
+          <button class="primary-button" type="submit" aria-label="Buscar pecas">
+            <span>Buscar</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="trust-row" aria-label="Beneficios">
+        <article>
+          <span class="benefit-icon">OEM</span>
+          <strong>Peca certa no fit</strong>
+          <small>Validacao por codigo original</small>
+        </article>
+        <article>
+          <span class="benefit-icon">NF</span>
+          <strong>Nota fiscal</strong>
+          <small>Garantia de procedencia</small>
+        </article>
+        <article>
+          <span class="benefit-icon">24h</span>
+          <strong>Envio em ate 24h</strong>
+          <small>Todo o Brasil</small>
+        </article>
+        <article>
+          <span class="benefit-icon">VIP</span>
+          <strong>Oficinas e lojistas</strong>
+          <small>Condicoes especiais</small>
+        </article>
+      </section>
+
+      <section class="section-wrap categories-section" id="categorias">
+        <div class="section-title">
+          <span></span>
+          <h1>Categorias em Destaque</h1>
+        </div>
+        <div class="category-grid" id="categoryGrid" aria-label="Filtros de categoria">
+          <button type="button" data-category="Suspensao">Suspensao</button>
+          <button type="button" data-category="Pastilhas de Freio">Pastilhas de Freio</button>
+          <button type="button" data-category="Amortecedores">Amortecedores</button>
+          <button type="button" data-category="Velas de Ignicao">Velas de Ignicao</button>
+          <button type="button" data-category="Bombas de Combustivel">Bombas de Combustivel</button>
+          <button type="button" data-category="Mangueiras">Mangueiras</button>
+          <button type="button" data-category="Discos de Freio">Discos de Freio</button>
+          <button type="button" data-category="">Ver Mais</button>
+        </div>
+      </section>
+
+      <section class="product-band" id="mais-vendidos">
+        <div class="band-header">
+          <div class="section-title dark">
+            <span></span>
+            <h2>Mais Vendidos</h2>
+          </div>
+          <div class="slider-actions">
+            <button type="button" data-scroll="bestSellers" data-direction="-1" aria-label="Voltar mais vendidos">&#8249;</button>
+            <button type="button" data-scroll="bestSellers" data-direction="1" aria-label="Avancar mais vendidos">&#8250;</button>
+          </div>
+        </div>
+        <div class="product-rail" id="bestSellers"></div>
+      </section>
+
+      <section class="feature-split">
+        <div class="feature-copy">
+          <p>
+            A suspensao e um dos sistemas mais criticos do seu veiculo e qualquer componente fora do ponto compromete a dirigibilidade e a seguranca.
+            Na HRB Imports, voce encontra bracos, bandejas, buchas, terminais e muito mais, com qualidade garantida para quem nao abre mao de fazer o servico certo.
+          </p>
+          <a class="secondary-button" href="#promocoes">Ver mais</a>
+        </div>
+        <img src="assets/banner-suspensao.png" alt="Componentes de suspensao premium" />
+      </section>
+
+      <section class="product-band" id="promocoes">
+        <div class="band-header">
+          <div class="section-title dark">
+            <span></span>
+            <h2>Promocoes</h2>
+          </div>
+          <div class="slider-actions">
+            <button type="button" data-scroll="promotions" data-direction="-1" aria-label="Voltar promocoes">&#8249;</button>
+            <button type="button" data-scroll="promotions" data-direction="1" aria-label="Avancar promocoes">&#8250;</button>
+          </div>
+        </div>
+        <div class="product-rail" id="promotions"></div>
+      </section>
+
+      <section class="delivery-block" id="atendimento">
+        <img src="assets/delivery.png" alt="Carrinho com pecas automotivas HRB Imports" />
+        <p>
+          Na HRB Imports, a gente entende que tempo e dinheiro. Por isso, todos os pedidos sao processados com agilidade,
+          embalados com cuidado e despachados com rastreamento completo para que a peca certa chegue ate voce o mais rapido possivel.
+        </p>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-panel">
+        <button type="button" class="close-cart" id="closeCart" aria-label="Fechar carrinho">&times;</button>
+        <h2>Carrinho</h2>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+          <span>Total</span>
+          <strong id="drawerTotal">R$ 0,00</strong>
+        </div>
+        <a class="primary-button full" href="https://wa.me/5519999999999" target="_blank" rel="noreferrer">
+          Finalizar pelo WhatsApp
+        </a>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <section>
+        <img src="assets/logo.svg" alt="HRB Imports" />
+        <p>A distribuidora de confianca para quem exige pecas premium e precisao na aplicacao.</p>
+        <small>CNPJ: 32.162.376/0001-99<br />Hortolandia - SP</small>
+      </section>
+      <section>
+        <h2>Links</h2>
+        <a href="#categorias">Freios & Suspensao</a>
+        <a href="#categorias">Motor & Arrefecimento</a>
+        <a href="#categorias">Filtros & Lubrificantes</a>
+        <a href="#promocoes">Ofertas para Oficinas</a>
+      </section>
+      <section>
+        <h2>Atendimento e suporte</h2>
+        <a href="#atendimento">Politica de trocas</a>
+        <a href="#atendimento">Prazos e frete expresso</a>
+        <a href="#inicio">Sobre a HRB Imports</a>
+        <a href="#atendimento">Fale com um especialista</a>
+      </section>
+      <section>
+        <h2>Acesso VIP para oficinas</h2>
+        <p>Cadastre seu e-mail ou WhatsApp e receba condicoes exclusivas e novidades de estoque.</p>
+        <form class="newsletter" id="newsletterForm">
+          <input type="text" name="contact" placeholder="Email ou WhatsApp" aria-label="Email ou WhatsApp" />
+          <button type="submit" aria-label="Cadastrar">&gt;</button>
+        </form>
+        <small id="newsletterMessage">2026 HRB Imports Auto Parts. Todos os direitos reservados.</small>
+      </section>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
