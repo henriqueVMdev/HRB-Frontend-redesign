@@ -2355,3 +2355,153 @@ a {
     grid-column: auto;
   }
 }
+
+/* Shared button feedback */
+.primary-button,
+.secondary-button,
+.category-grid button,
+.slider-actions button,
+.add-cart,
+.newsletter button,
+.signup-submit,
+.login-submit,
+.login-register-button,
+.filter-apply,
+.filter-clear,
+.result-buy button[data-add],
+.favorite-button,
+.detail-add,
+.detail-favorite,
+.checkout-submit,
+.comment-box button,
+.product-thumbs button,
+.text-action,
+.menu-button,
+.signup-login,
+.checkout-cta-row a {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.category-grid button:hover,
+.category-grid button.is-active,
+.signup-submit:hover,
+.login-submit:hover,
+.filter-apply:hover,
+.result-buy button[data-add]:hover,
+.detail-add:hover,
+.checkout-submit:hover,
+.comment-box button:hover,
+.newsletter button:hover,
+.add-cart:hover {
+  border-color: var(--yellow);
+  background: var(--black);
+  color: var(--yellow);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+}
+
+.primary-button:hover *,
+.secondary-button:hover *,
+.category-grid button:hover *,
+.signup-submit:hover *,
+.login-submit:hover *,
+.filter-apply:hover *,
+.result-buy button[data-add]:hover *,
+.detail-add:hover *,
+.checkout-submit:hover *,
+.comment-box button:hover *,
+.newsletter button:hover *,
+.add-cart:hover * {
+  color: inherit;
+}
+
+.login-register-button:hover,
+.detail-favorite:hover,
+.favorite-button:hover,
+.filter-clear:hover,
+.signup-login:hover,
+.text-action:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+.detail-favorite:hover,
+.login-register-button:hover {
+  background: var(--black);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+
+.slider-actions button:hover,
+.product-thumbs button:hover,
+.menu-button:hover {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+}
+
+.product-thumbs button:hover {
+  opacity: 0.9;
+}
+
+.primary-button:active,
+.secondary-button:active,
+.category-grid button:active,
+.slider-actions button:active,
+.add-cart:active,
+.newsletter button:active,
+.signup-submit:active,
+.login-submit:active,
+.login-register-button:active,
+.filter-apply:active,
+.filter-clear:active,
+.result-buy button[data-add]:active,
+.favorite-button:active,
+.detail-add:active,
+.detail-favorite:active,
+.checkout-submit:active,
+.comment-box button:active,
+.product-thumbs button:active,
+.text-action:active,
+.menu-button:active,
+.signup-login:active,
+.checkout-cta-row a:active {
+  box-shadow: none;
+  transform: translateY(1px) scale(0.99);
+}
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.category-grid button:focus-visible,
+.slider-actions button:focus-visible,
+.add-cart:focus-visible,
+.newsletter button:focus-visible,
+.signup-submit:focus-visible,
+.login-submit:focus-visible,
+.login-register-button:focus-visible,
+.filter-apply:focus-visible,
+.filter-clear:focus-visible,
+.result-buy button[data-add]:focus-visible,
+.favorite-button:focus-visible,
+.detail-add:focus-visible,
+.detail-favorite:focus-visible,
+.checkout-submit:focus-visible,
+.comment-box button:focus-visible,
+.product-thumbs button:focus-visible,
+.text-action:focus-visible,
+.menu-button:focus-visible,
+.signup-login:focus-visible,
+.checkout-cta-row a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
