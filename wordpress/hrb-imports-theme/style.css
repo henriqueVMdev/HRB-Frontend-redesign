@@ -526,7 +526,9 @@ a {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(26px, 5vw, 52px) clamp(16px, 4vw, 64px);
-  background: #101010;
+  background:
+    url("assets/topolog_white.svg") center / 601px 601px,
+    #101010;
 }
 
 .feature-copy {
@@ -558,7 +560,9 @@ a {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(34px, 6vw, 72px) clamp(16px, 5vw, 72px);
-  background: #111111;
+  background:
+    url("assets/topolog_white.svg") center / 601px 601px,
+    #111111;
 }
 
 .delivery-block img {
