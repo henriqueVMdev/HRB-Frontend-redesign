@@ -29,11 +29,15 @@ Text Domain: hrb-imports
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background:
     radial-gradient(circle at 70% 12%, rgba(255, 215, 0, 0.18), transparent 24rem),
     url("assets/topolog_white.svg"),
@@ -41,6 +45,10 @@ body {
   background-size: auto, 601px 601px, auto;
   color: var(--white);
   font-family: "Montserrat", Arial, sans-serif;
+}
+
+body > main {
+  flex: 1 0 auto;
 }
 
 button,
@@ -659,12 +667,13 @@ a {
 }
 
 .footer {
+  flex-shrink: 0;
   display: grid;
   grid-template-columns: 1.15fr repeat(3, 1fr);
   gap: 24px;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 32px 24px;
+  width: 100%;
+  margin: 0;
+  padding: 32px max(24px, calc((100vw - var(--max)) / 2 + 24px));
   border-top: 1px solid rgba(162, 162, 162, 0.1);
   background: #0e0e0e;
 }
