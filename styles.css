@@ -793,7 +793,8 @@ a {
   display: flex;
   align-items: flex-end;
   gap: 33px;
-  padding: 32px 24px 0;
+  /* sem padding à direita: o banner encosta na borda do site */
+  padding: 32px 0 0 24px;
 }
 
 /* banner gruda na faixa amarela logo abaixo — sem fresta preta no hover */
@@ -850,7 +851,8 @@ a {
   flex: 1;
   min-width: 0;
   height: 386px;
-  border-radius: 12px 12px 0 0;
+  /* arredonda só o topo-esquerdo; direita e base coladas nas bordas, sem fresta no hover */
+  border-radius: 12px 0 0 0;
   overflow: hidden;
 }
 
