@@ -400,7 +400,7 @@ function setupRailFades() {
 /* ---------------- Arrastar trilhos com o mouse ---------------- */
 
 function setupDragScroll() {
-  document.querySelectorAll(".product-rail, .checkout-rail").forEach((rail) => {
+  document.querySelectorAll(".product-rail, .checkout-rail, .hero-track").forEach((rail) => {
     let startX = 0;
     let startScroll = 0;
     let dragging = false;
@@ -428,6 +428,13 @@ function setupDragScroll() {
       if (!dragging) return;
       dragging = false;
       rail.classList.remove("is-dragging");
+      /* hero: encaixa no slide mais próximo ao soltar o mouse */
+      if (moved && rail.classList.contains("hero-track")) {
+        rail.scrollTo({
+          left: Math.round(rail.scrollLeft / rail.clientWidth) * rail.clientWidth,
+          behavior: "smooth",
+        });
+      }
     });
 
     /* se arrastou, o clique que vem depois não deve abrir o produto */
