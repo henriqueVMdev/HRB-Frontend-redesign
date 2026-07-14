@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Resultados de busca HRB Imports com filtros por montadora, modelo, ano, motor, categoria, marca e preco."
-    />
-    <title>Resultados | HRB Imports</title>
+    <meta name="description" content="Resultados de busca de peças - HRB Imports Auto Parts." />
+    <title>Resultados — HRB Imports Auto Parts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,116 +13,123 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="results-page">
-    <header class="topbar">
+  <body>
+    <header class="top-manager">
       <a class="brand" href="index.html" aria-label="HRB Imports">
-        <img src="assets/top-logo.svg" alt="HRB Imports" />
+        <img src="assets/figma/header-logo.svg" alt="HRB Imports" />
       </a>
-      <div class="header-actions checkout-actions">
-        <a class="text-action" href="checkout.html">
-          <span>Meu Carrinho</span>
-          <strong id="resultsHeaderTotal">R$ 0,00</strong>
-        </a>
-        <a class="text-action" href="login.html">Minha Conta</a>
+      <div class="top-actions">
+        <button class="top-action" type="button" id="cartButton">
+          <span>Meu Carrinho&nbsp;|&nbsp;<strong id="cartTotal">R$ 0,00</strong></span>
+          <img src="assets/figma/header-cart-icon.svg" alt="" aria-hidden="true" />
+        </button>
+        <button class="top-action" type="button" id="loginButton">
+          <span>Minha Conta</span>
+          <img src="assets/figma/header-user-icon.svg" alt="" aria-hidden="true" />
+        </button>
       </div>
     </header>
 
     <main class="results-layout">
-      <aside class="filter-sidebar" aria-label="Filtros">
-        <form id="resultsFilterForm" class="filter-form">
-          <label class="filter-field">
+      <aside class="filter-sidebar">
+        <form id="resultsFilterForm">
+          <label class="input-field boxed">
             <span>Busca</span>
-            <input type="search" name="q" value="Trocador de Calor" />
+            <input type="search" name="q" placeholder="Trocador de Calor" />
           </label>
 
-          <section class="filter-panel">
-            <h2>Filtros</h2>
+          <div class="filter-panel">
+            <h2 class="filter-heading">Filtros</h2>
 
-            <label class="filter-field">
-              <span>Montadora</span>
-              <select name="brand">
-                <option value="">Marca</option>
-                <option>BMW</option>
-                <option>Mercedes-Benz</option>
-                <option>Audi</option>
-                <option>Volkswagen</option>
-              </select>
-            </label>
+            <div class="filter-group">
+              <label class="input-field boxed">
+                <span>Montadora</span>
+                <select name="brand">
+                  <option value="">Marca</option>
+                  <option>BMW</option>
+                  <option>Mercedes-Benz</option>
+                  <option>Audi</option>
+                  <option>Volkswagen</option>
+                </select>
+              </label>
+              <img class="brand-logo" id="brandLogo" src="assets/figma/brand-bmw.svg" alt="Logo da montadora" />
+              <label class="input-field boxed">
+                <span>Modelo</span>
+                <select name="model">
+                  <option value="">Selecione Modelo</option>
+                  <option>320i</option>
+                  <option>X1</option>
+                  <option>C180</option>
+                  <option>A3</option>
+                  <option>Jetta</option>
+                </select>
+              </label>
+              <label class="input-field boxed">
+                <span>Ano</span>
+                <select name="year">
+                  <option value="">Selecione Ano</option>
+                  <option>2024</option>
+                  <option>2023</option>
+                  <option>2022</option>
+                  <option>2021</option>
+                  <option>2020</option>
+                </select>
+              </label>
+              <label class="input-field boxed">
+                <span>Motor</span>
+                <select name="engine">
+                  <option value="">Selecione Motor</option>
+                  <option>1.6</option>
+                  <option>2.0 Turbo</option>
+                  <option>3.0</option>
+                </select>
+              </label>
+            </div>
 
-            <img class="filter-brand-logo" src="assets/filter-bmw-logo.svg" alt="BMW" />
-
-            <label class="filter-field">
-              <span>Modelo</span>
-              <select name="model">
-                <option value="">Selecione Modelo</option>
-                <option>320i</option>
-                <option>X1</option>
-                <option>C180</option>
-                <option>A3</option>
-              </select>
-            </label>
-
-            <label class="filter-field">
-              <span>Ano</span>
-              <select name="year">
-                <option value="">Selecione Ano</option>
-                <option>2024</option>
-                <option>2023</option>
-                <option>2022</option>
-                <option>2021</option>
-              </select>
-            </label>
-
-            <label class="filter-field">
-              <span>Motor</span>
-              <select name="engine">
-                <option value="">Selecione Motor</option>
-                <option>2.0 Turbo</option>
-                <option>1.8 TFSI</option>
-                <option>Flex</option>
-              </select>
-            </label>
-
-            <fieldset class="filter-checks">
+            <fieldset class="check-group">
               <legend>Categorias</legend>
-              <label><input type="checkbox" name="category" value="Sistema de Freio" /> Sistema de freio</label>
-              <label><input type="checkbox" name="category" value="Suspensao dianteira" /> Suspensao dianteira</label>
-              <label><input type="checkbox" name="category" value="Suspensao traseira" /> Suspensao traseira</label>
-              <label><input type="checkbox" name="category" value="Motor" /> Motor</label>
+              <label class="check-item"><input type="checkbox" name="category" value="Pastilhas de Freio" /><span>Sistema de freio</span></label>
+              <label class="check-item"><input type="checkbox" name="category" value="Suspensão" /><span>Suspensão dianteira</span></label>
+              <label class="check-item"><input type="checkbox" name="category" value="Amortecedores" /><span>Suspensão traseira</span></label>
+              <label class="check-item"><input type="checkbox" name="category" value="Velas de Ignição" /><span>Motor</span></label>
             </fieldset>
 
-            <fieldset class="filter-checks">
+            <fieldset class="check-group">
               <legend>Marcas</legend>
-              <label><input type="checkbox" name="maker" value="HRB" /> HRB</label>
-              <label><input type="checkbox" name="maker" value="Bosch" /> Bosch</label>
-              <label><input type="checkbox" name="maker" value="Febi" /> Febi</label>
-              <label><input type="checkbox" name="maker" value="Hengst" /> Hengst</label>
+              <label class="check-item"><input type="checkbox" name="maker" value="HRB" /><span>HRB</span></label>
+              <label class="check-item"><input type="checkbox" name="maker" value="Bosch" /><span>Bosch</span></label>
+              <label class="check-item"><input type="checkbox" name="maker" value="Febi" /><span>Febi</span></label>
+              <label class="check-item"><input type="checkbox" name="maker" value="Hengst" /><span>Hengst</span></label>
             </fieldset>
 
-            <div class="price-filter">
-              <span>Alcance de Preco</span>
-              <div>
-                <input type="number" name="minPrice" placeholder="0000" min="0" />
-                <b></b>
-                <input type="number" name="maxPrice" placeholder="0000" min="0" />
+            <div class="price-range">
+              <span class="range-label">Alcance de Preço</span>
+              <div class="range-inputs">
+                <input type="number" name="minPrice" placeholder="0000" min="0" aria-label="Preço mínimo" />
+                <i></i>
+                <input type="number" name="maxPrice" placeholder="0000" min="0" aria-label="Preço máximo" />
               </div>
             </div>
 
-            <button class="filter-apply" type="submit">Aplicar</button>
-            <button class="filter-clear" type="button" id="clearResultsFilters">Limpar tudo</button>
-          </section>
+            <button class="yellow-button apply-button" type="submit">Aplicar</button>
+            <button class="clear-button" type="button" id="clearResultsFilters">Limpar tudo</button>
+          </div>
         </form>
       </aside>
 
-      <section class="results-content" aria-labelledby="resultsTitle">
-        <div class="section-title results-title">
-          <span></span>
-          <h1 id="resultsTitle">Resultados</h1>
+      <section class="results-content">
+        <div class="section-title reveal">
+          <div class="title-row">
+            <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+            <h1>Resultados</h1>
+          </div>
+          <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
         </div>
-        <div class="results-list" id="resultsList"></div>
+        <div id="resultsList" class="results-list"></div>
       </section>
     </main>
 
+    <script src="shared.js" defer></script>
     <script src="resultados.js" defer></script>
   </body>
 </html>

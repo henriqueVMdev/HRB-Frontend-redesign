@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Detalhes do produto HRB Imports com galeria, especificacoes tecnicas, aplicacoes e avaliacoes."
-    />
-    <title>Trocador de Calor | HRB Imports</title>
+    <meta name="description" content="Detalhes do produto - HRB Imports Auto Parts." />
+    <title>Detalhes do Produto — HRB Imports Auto Parts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,204 +13,234 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="product-detail-page">
-    <header class="topbar">
+  <body>
+    <header class="top-manager">
       <a class="brand" href="index.html" aria-label="HRB Imports">
-        <img src="assets/top-logo.svg" alt="HRB Imports" />
+        <img src="assets/figma/header-logo.svg" alt="HRB Imports" />
       </a>
-      <div class="header-actions checkout-actions">
-        <a class="text-action" href="checkout.html">
-          <span>Meu Carrinho</span>
-          <strong id="productHeaderTotal">R$ 0,00</strong>
-        </a>
-        <a class="text-action" href="login.html">Minha Conta</a>
+      <div class="top-actions">
+        <button class="top-action" type="button" id="cartButton">
+          <span>Meu Carrinho&nbsp;|&nbsp;<strong id="cartTotal">R$ 0,00</strong></span>
+          <img src="assets/figma/header-cart-icon.svg" alt="" aria-hidden="true" />
+        </button>
+        <button class="top-action" type="button" id="loginButton">
+          <span>Minha Conta</span>
+          <img src="assets/figma/header-user-icon.svg" alt="" aria-hidden="true" />
+        </button>
       </div>
     </header>
 
-    <main class="product-detail-main">
-      <section class="product-hero-detail">
-        <div class="product-gallery" aria-label="Galeria do produto">
-          <img id="mainProductImage" class="main-product-image" src="assets/product-main.png" alt="Trocador de calor HRB" />
-          <div class="product-thumbs" id="productThumbs">
-            <button type="button" class="is-active" data-image="assets/product-main.png" aria-label="Imagem principal">
-              <img src="assets/product-main.png" alt="" />
+    <main class="product-page">
+      <section class="product-hero reveal">
+        <div class="product-gallery">
+          <div class="gallery-main">
+            <img id="mainProductImage" src="assets/figma/product-main.png" alt="Foto principal do produto" />
+          </div>
+          <div class="gallery-thumbs" id="productThumbs">
+            <button type="button" class="is-active" data-image="assets/figma/product-main.png">
+              <img src="assets/figma/product-thumb-1.png" alt="Miniatura 1" />
             </button>
-            <button type="button" data-image="assets/product-thumb-1.png" aria-label="Imagem secundaria 1">
-              <img src="assets/product-thumb-1.png" alt="" />
+            <button type="button" data-image="assets/figma/product-thumb-2.png">
+              <img src="assets/figma/product-thumb-2.png" alt="Miniatura 2" />
             </button>
-            <button type="button" data-image="assets/product-thumb-2.png" aria-label="Imagem secundaria 2">
-              <img src="assets/product-thumb-2.png" alt="" />
+            <button type="button" data-image="assets/figma/product-thumb-3.png">
+              <img src="assets/figma/product-thumb-3.png" alt="Miniatura 3" />
             </button>
-            <button type="button" data-image="assets/product-thumb-3.png" aria-label="Imagem secundaria 3">
-              <img src="assets/product-thumb-3.png" alt="" />
-            </button>
-            <button type="button" data-image="assets/product-thumb-4.png" aria-label="Imagem secundaria 4">
-              <img src="assets/product-thumb-4.png" alt="" />
+            <button type="button" data-image="assets/figma/product-thumb-4.png">
+              <img src="assets/figma/product-thumb-4.png" alt="Miniatura 4" />
             </button>
           </div>
         </div>
 
-        <article class="product-purchase">
-          <p class="product-category">Sistema de Resfriamento // Motor</p>
-          <h1>Trocador de calor c/ suporte filtro oleo aluminio</h1>
-          <div class="product-identifiers">
-            <span>OEM: 11428585235</span>
-            <b></b>
-            <span>SKU: HRB12C12OC</span>
-          </div>
-
-          <section class="purchase-panel">
-            <p class="in-stock">Em estoque</p>
-            <div>
-              <span>Preco especial</span>
-              <strong>R$ 1.170,90</strong>
-              <small>Ou 12x de R$ 97,57 sem juros no cartao</small>
+        <div class="product-summary">
+          <div class="product-headline">
+            <p class="product-category" id="productCategory">Sistema De Resfriamento // Motor</p>
+            <h1 class="product-title" id="productName">TROCADOR DE CALOR C/ SUPORTE FILTRO OLEO ALUMINIO</h1>
+            <div class="result-meta">
+              <span id="productOem">OEM: 11428585235</span>
+              <i></i>
+              <span id="productSku">SKU: HRB12C12OC</span>
             </div>
-            <button class="detail-add" type="button" id="detailAddCart">
-              <img src="assets/product-add-icon.svg" alt="" />
-              Adicionar
-            </button>
-            <button class="detail-favorite" type="button" id="detailFavorite">
-              <img src="assets/product-favorite.svg" alt="" />
-              Favoritar
-            </button>
-            <aside class="engineer-note">
-              <strong>Performance engineered</strong>
-              <p>Desenvolvido com suporte e precisao construtiva dedicada a alta performance em tracks days e uso intensivo.</p>
-            </aside>
-          </section>
-        </article>
-      </section>
-
-      <section class="product-info-grid">
-        <article class="specs-card">
-          <div class="section-title compact-title">
-            <span></span>
-            <h2>Especificacoes Tecnicas</h2>
           </div>
-          <div class="specs-grid">
-            <dl>
-              <dt>Material principal</dt>
-              <dd>Aluminio 6061-T6</dd>
-            </dl>
-            <dl>
-              <dt>Fluido liquido</dt>
-              <dd>1450g</dd>
-            </dl>
-            <dl>
-              <dt>Faixa de pressao</dt>
-              <dd>Ate 250 PSI</dd>
-            </dl>
-            <dl>
-              <dt>Acabamento</dt>
-              <dd>Anodizado preto</dd>
-            </dl>
-            <dl>
-              <dt>Conexao</dt>
-              <dd>Quick-connect OEM</dd>
-            </dl>
-            <dl>
-              <dt>Garantia</dt>
-              <dd>ISO 9001:2015</dd>
-            </dl>
-          </div>
-        </article>
 
-        <article class="applications-card">
-          <div class="section-title compact-title">
-            <span></span>
-            <h2>Aplicacoes</h2>
+          <div class="buy-panel">
+            <div class="stock-badge"><span></span>Em Estoque</div>
+            <div class="buy-pricing">
+              <p class="buy-label">Preço Especial</p>
+              <strong class="buy-price" id="productPrice">R$ 1.170,90</strong>
+              <p class="buy-installments" id="productInstallments">OU 12X DE R$ 97,57 SEM JUROS NO CARTÃO</p>
+            </div>
+            <div class="buy-actions">
+              <button class="yellow-button buy-add" type="button" id="detailAddCart">
+                <img src="assets/figma/cart-icon-24.svg" alt="" aria-hidden="true" />
+                Adicionar
+              </button>
+              <button class="favorite-big" type="button" id="detailFavorite">
+                <img src="assets/figma/heart-outline.svg" alt="" aria-hidden="true" />
+                Favoritar
+              </button>
+            </div>
+            <div class="perf-note">
+              <img src="assets/figma/shield-icon.svg" alt="" aria-hidden="true" />
+              <div>
+                <strong>Performance Engineered</strong>
+                <p>Desenvolvido para suportar as pressões extremas de câmbios de alta performance em track days e uso intensivo.</p>
+              </div>
+            </div>
           </div>
-          <ul>
-            <li>Mercedes C 250 W204 2008 - 2014</li>
-            <li>Mercedes SLK 250 R172 2012 - 2018</li>
-            <li>Mercedes E 250 W212 2011 - 2017</li>
-            <li>Mercedes C 300 W204 2008 - 2014</li>
-            <li>Mercedes C 250 W205 2014 - 2020</li>
-            <li>Mercedes E 200 W210 2008 - 2014</li>
-          </ul>
-        </article>
-
-        <article class="description-card">
-          <div class="section-title compact-title">
-            <span></span>
-            <h2>Descricao Tecnica</h2>
-          </div>
-          <p>
-            O trocador de calor de oleo de cambio HRB Imports para motores BMW B58/S58 e um componente vital para manter a integridade da transmissao automatica de 8 velocidades ZF.
-            Projetado para superar especificacoes originais de fabrica, este trocador oferece capacidade de dissipacao termica superior.
-          </p>
-        </article>
-      </section>
-
-      <section class="reviews-area">
-        <div class="section-title compact-title">
-          <span></span>
-          <h2>Resumo das Avaliacoes</h2>
         </div>
-        <article class="rating-summary">
-          <div class="rating-number">
-            <strong>4,8</strong>
-            <img src="assets/product-stars.svg" alt="5 estrelas" />
-            <p>1.790 Avaliacoes | 1.030 Comentarios</p>
-            <p>97% dos avaliadores recomendam este produto.</p>
-          </div>
-          <div class="rating-bars" aria-label="Distribuicao das avaliacoes">
-            <span>5 estrelas <b style="--bar: 86%"></b> 86%</span>
-            <span>4 estrelas <b style="--bar: 8%"></b> 8%</span>
-            <span>3 estrelas <b style="--bar: 1%"></b> 1%</span>
-            <span>2 estrelas <b style="--bar: 0%"></b> 0%</span>
-            <span>1 estrela <b style="--bar: 2%"></b> 2%</span>
-          </div>
-        </article>
+      </section>
 
-        <form class="comment-box" id="commentForm">
-          <textarea name="comment" maxlength="100" placeholder="Adicione feedback baseado na qualidade do produto"></textarea>
-          <div>
-            <button type="submit">Add Comment</button>
-            <small id="commentCounter">0 / 100</small>
+      <section class="product-detail-card reveal">
+        <div class="detail-top">
+          <div class="detail-left">
+            <div class="detail-block">
+              <div class="section-title small">
+                <div class="title-row">
+                  <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+                  <h2>Especificações técnicas</h2>
+                </div>
+                <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+              </div>
+              <dl class="spec-grid">
+                <div><dt>Material</dt><dd>Alumínio 6061-T6</dd></div>
+                <div><dt>Peso Líquido</dt><dd>1.450g</dd></div>
+                <div><dt>Range de Pressão</dt><dd>Até 250 PSI</dd></div>
+                <div><dt>Acabamento</dt><dd>Anodizado Preto</dd></div>
+                <div><dt>Conexões</dt><dd>Quick-Connect OEM</dd></div>
+                <div><dt>Certificação</dt><dd>ISO 9001:2015</dd></div>
+              </dl>
+            </div>
+
+            <div class="detail-block">
+              <div class="section-title small">
+                <div class="title-row">
+                  <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+                  <h2>Descrição Técnica</h2>
+                </div>
+                <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+              </div>
+              <p class="tech-description">
+                O Trocador de Calor de Óleo de Câmbio HRB Imports para motores BMW B58/S58 é um componente vital para
+                manter a integridade da transmissão automática de 8 velocidades ZF. Projetado para superar as
+                especificações originais de fábrica, este trocador oferece uma capacidade de dissipação térmica 25%
+                superior.
+              </p>
+            </div>
+          </div>
+
+          <aside class="applications-panel">
+            <div class="applications-title">
+              <img src="assets/figma/car-icon.svg" alt="" aria-hidden="true" />
+              <h2>Aplicações</h2>
+            </div>
+            <div class="applications-list">
+              <p>MERCEDES C 250 W204 2008 - 2014</p>
+              <p>MERCEDES SLK 250 R172 2012 - 2017</p>
+              <p>MERCEDES C 180 W204 2008 - 2014</p>
+              <p>MERCEDES SLK 200 R172 2012 - 2017</p>
+              <p>MERCEDES C 350 W204 2008 - 2014</p>
+              <p>MERCEDES C 200 W204 2008 - 2014</p>
+              <p>MERCEDES CLC 200 2009 - 2011</p>
+              <p>MERCEDES SLK 55 AMG R172 2012 - 2017</p>
+              <p>MERCEDES SLK 350 R172 2012 - 2017</p>
+              <p>MERCEDES C 300 W204 2008 - 2014</p>
+              <p>MERCEDES C 280 W204 2008 - 2014</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="detail-block reveal">
+          <div class="section-title small">
+            <div class="title-row">
+              <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+              <h2>Resumo das avaliações</h2>
+            </div>
+            <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="rating-summary">
+            <div class="rating-block">
+              <strong class="rating-number">4,8</strong>
+              <img class="rating-stars" src="assets/figma/stars-row.svg" alt="4,8 de 5 estrelas" />
+              <p>1.790 Avaliações&nbsp;&nbsp;|&nbsp;&nbsp;1.030 Comentários</p>
+              <p>97% dos avaliadores recomendam este produto.</p>
+            </div>
+            <div class="rating-bars">
+              <div class="rating-row"><span>5 estrelas</span><div class="bar"><i style="--fill: 86%"></i></div><b>86%</b></div>
+              <div class="rating-row"><span>4 estrelas</span><div class="bar"><i style="--fill: 8%"></i></div><b>8%</b></div>
+              <div class="rating-row"><span>3 estrelas</span><div class="bar"><i style="--fill: 1%"></i></div><b>1%</b></div>
+              <div class="rating-row"><span>2 estrelas</span><div class="bar"><i style="--fill: 0%"></i></div><b>0%</b></div>
+              <div class="rating-row"><span>1 estrela</span><div class="bar"><i style="--fill: 2%"></i></div><b>2%</b></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="comment-box reveal" id="commentForm">
+          <textarea name="comment" maxlength="100" placeholder="Escreva sua avaliação..."></textarea>
+          <div class="comment-footer">
+            <span id="commentCounter">0 / 100</span>
+            <button type="submit" class="comment-submit">Adicionar Comentário</button>
           </div>
         </form>
 
-        <div class="section-title compact-title">
-          <span></span>
-          <h2>Avaliacoes</h2>
+        <div class="detail-block reveal">
+          <div class="section-title small">
+            <div class="title-row">
+              <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+              <h2>Avaliações</h2>
+            </div>
+            <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="review-list" id="reviewList"></div>
         </div>
-        <div class="review-list" id="reviewList"></div>
       </section>
     </main>
 
     <footer class="footer">
-      <section>
-        <img src="assets/logo.svg" alt="HRB Imports" />
-        <p>A distribuidora de confianca para quem exige pecas premium e precisao na aplicacao.</p>
-        <small>CNPJ: 32.162.376/0001-99<br />Hortolandia - SP</small>
+      <section class="footer-brand">
+        <img class="footer-logo" src="assets/figma/footer-logo.svg" alt="HRB Imports" />
+        <p>
+          A distribuidora de confiança para quem exige peças premium e precisão na aplicação. Do nosso estoque direto
+          para a sua oficina.
+        </p>
+        <small>CNPJ: 32.162.376/0001-99<br />Hortolândia - SP</small>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><img src="assets/figma/social-1.svg" alt="" /></a>
+          <a href="#" aria-label="Facebook"><img src="assets/figma/social-2.svg" alt="" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="assets/figma/social-3.svg" alt="" /></a>
+        </div>
       </section>
-      <section>
-        <h2>Links</h2>
-        <a href="resultados.html">Freios & Suspensao</a>
-        <a href="resultados.html">Motor & Arrefecimento</a>
-        <a href="resultados.html">Filtros & Lubrificantes</a>
-        <a href="resultados.html">Ofertas para Oficinas</a>
-      </section>
-      <section>
-        <h2>Atendimento e suporte</h2>
-        <a href="#">Politica de trocas</a>
-        <a href="#">Prazos e frete expresso</a>
-        <a href="index.html">Sobre a HRB Imports</a>
-        <a href="#">Fale com um especialista</a>
-      </section>
-      <section>
-        <h2>Acesso VIP para oficinas</h2>
-        <p>Cadastre seu e-mail ou WhatsApp e receba condicoes exclusivas e novidades de estoque.</p>
-        <form class="newsletter">
-          <input type="text" name="contact" placeholder="Email address" aria-label="Email" />
-          <button type="submit" aria-label="Cadastrar">&gt;</button>
-        </form>
-        <small>2026 HRB Imports Auto Parts. Todos os direitos reservados.</small>
-      </section>
+      <div class="footer-cols">
+        <section class="footer-col">
+          <h4>Links</h4>
+          <a href="resultados.html?category=Pastilhas%20de%20Freio">Freios &amp; Suspensão</a>
+          <a href="resultados.html?category=Mangueiras">Motor &amp; Arrefecimento</a>
+          <a href="resultados.html">Filtros &amp; Lubrificantes</a>
+          <a href="resultados.html">Marcas Atendidas (BMW, Mercedes, Audi...)</a>
+          <a href="index.html#promocoes">Ofertas para Oficinas</a>
+        </section>
+        <section class="footer-col">
+          <h4>Atendimento e Suporte</h4>
+          <a href="#">Política de Trocas e Devoluções</a>
+          <a href="#">Prazos e Frete Expresso</a>
+          <a href="#">Sobre a HRB Imports</a>
+          <a href="#">Fale com um Especialista</a>
+        </section>
+        <section class="footer-col">
+          <h4>Acesso VIP para Oficinas</h4>
+          <p>Cadastre seu e-mail ou WhatsApp e receba condições exclusivas, novidades de estoque.</p>
+          <form class="newsletter">
+            <input type="text" name="contact" placeholder="Email address" aria-label="Email ou WhatsApp" />
+            <button type="submit" aria-label="Cadastrar">
+              <img src="assets/figma/send-arrow.svg" alt="" aria-hidden="true" />
+            </button>
+          </form>
+          <span class="footer-copy">© 2026 HRB Imports Auto Parts. All Rights Reserved.</span>
+        </section>
+      </div>
     </footer>
 
+    <script src="shared.js" defer></script>
     <script src="produto.js" defer></script>
   </body>
 </html>

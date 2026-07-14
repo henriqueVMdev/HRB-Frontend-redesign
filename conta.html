@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Minha conta - HRB Imports Auto Parts." />
+    <title>Minha Conta — HRB Imports Auto Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-manager">
+      <a class="brand" href="index.html" aria-label="HRB Imports">
+        <img src="assets/figma/header-logo.svg" alt="HRB Imports" />
+      </a>
+      <div class="top-actions">
+        <button class="top-action" type="button" id="cartButton">
+          <span>Meu Carrinho&nbsp;|&nbsp;<strong id="cartTotal">R$ 0,00</strong></span>
+          <img src="assets/figma/header-cart-icon.svg" alt="" aria-hidden="true" />
+        </button>
+        <button class="top-action" type="button" id="loginButton">
+          <span>João</span>
+          <img src="assets/figma/header-user-icon.svg" alt="" aria-hidden="true" />
+        </button>
+      </div>
+    </header>
+
+    <main class="account-page">
+      <section class="account-panel reveal is-visible">
+        <h1 class="account-title">Cadastro</h1>
+
+        <form class="account-form" id="accountForm">
+          <div class="account-section">
+            <div class="section-title small">
+              <div class="title-row">
+                <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+                <h2>Informações Pessoais</h2>
+              </div>
+              <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="form-row">
+              <label class="input-field boxed plain light-label">
+                <span>Nome</span>
+                <input type="text" name="name" placeholder="João pedro" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>CPF</span>
+                <input type="text" name="document" placeholder="11122233344" />
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="input-field boxed plain light-label">
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="Joao@gmail.com" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>Número</span>
+                <input type="tel" name="phone" placeholder="19-98176 - 3432" />
+              </label>
+            </div>
+          </div>
+
+          <div class="account-section">
+            <div class="section-title small">
+              <div class="title-row">
+                <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+                <h2>Veículo</h2>
+              </div>
+              <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="form-row">
+              <label class="input-field boxed plain light-label">
+                <span>Chassis</span>
+                <input type="text" name="chassis" placeholder="12345678912345678" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>Marca</span>
+                <input type="text" name="carBrand" placeholder="BMW" />
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="input-field boxed plain light-label">
+                <span>Modelo</span>
+                <input type="text" name="carModel" placeholder="BMW 320i F30" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>Ano</span>
+                <input type="text" name="carYear" placeholder="2014" />
+              </label>
+            </div>
+          </div>
+
+          <div class="account-section">
+            <div class="section-title small">
+              <div class="title-row">
+                <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+                <h2>Endereço</h2>
+              </div>
+              <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="form-row">
+              <label class="input-field boxed plain light-label">
+                <span>Cep</span>
+                <input type="text" name="zip" placeholder="123456789-10" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>Rua</span>
+                <input type="text" name="street" placeholder="Rua joao silva" />
+              </label>
+            </div>
+            <div class="form-row address-row">
+              <label class="input-field boxed plain light-label grow">
+                <span>Bairro</span>
+                <input type="text" name="district" placeholder="Jardim flores" />
+              </label>
+              <label class="input-field boxed plain light-label tiny">
+                <span>Numero</span>
+                <input type="text" name="number" placeholder="123" />
+              </label>
+              <label class="input-field boxed plain light-label">
+                <span>Cidade</span>
+                <input type="text" name="city" placeholder="Hortolândia" />
+              </label>
+              <label class="input-field boxed plain light-label tiny">
+                <span>UF</span>
+                <input type="text" name="uf" placeholder="SP" maxlength="2" />
+              </label>
+            </div>
+          </div>
+
+          <a class="yellow-button account-orders" href="pedidos.html">Minhas Compras</a>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section class="footer-brand">
+        <img class="footer-logo" src="assets/figma/footer-logo.svg" alt="HRB Imports" />
+        <p>
+          A distribuidora de confiança para quem exige peças premium e precisão na aplicação. Do nosso estoque direto
+          para a sua oficina.
+        </p>
+        <small>CNPJ: 32.162.376/0001-99<br />Hortolândia - SP</small>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><img src="assets/figma/social-1.svg" alt="" /></a>
+          <a href="#" aria-label="Facebook"><img src="assets/figma/social-2.svg" alt="" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="assets/figma/social-3.svg" alt="" /></a>
+        </div>
+      </section>
+      <div class="footer-cols">
+        <section class="footer-col">
+          <h4>Links</h4>
+          <a href="resultados.html?category=Pastilhas%20de%20Freio">Freios &amp; Suspensão</a>
+          <a href="resultados.html?category=Mangueiras">Motor &amp; Arrefecimento</a>
+          <a href="resultados.html">Filtros &amp; Lubrificantes</a>
+          <a href="resultados.html">Marcas Atendidas (BMW, Mercedes, Audi...)</a>
+          <a href="index.html#promocoes">Ofertas para Oficinas</a>
+        </section>
+        <section class="footer-col">
+          <h4>Atendimento e Suporte</h4>
+          <a href="#">Política de Trocas e Devoluções</a>
+          <a href="#">Prazos e Frete Expresso</a>
+          <a href="#">Sobre a HRB Imports</a>
+          <a href="#">Fale com um Especialista</a>
+        </section>
+        <section class="footer-col">
+          <h4>Acesso VIP para Oficinas</h4>
+          <p>Cadastre seu e-mail ou WhatsApp e receba condições exclusivas, novidades de estoque.</p>
+          <form class="newsletter">
+            <input type="text" name="contact" placeholder="Email address" aria-label="Email ou WhatsApp" />
+            <button type="submit" aria-label="Cadastrar">
+              <img src="assets/figma/send-arrow.svg" alt="" aria-hidden="true" />
+            </button>
+          </form>
+          <span class="footer-copy">© 2026 HRB Imports Auto Parts. All Rights Reserved.</span>
+        </section>
+      </div>
+    </footer>
+
+    <script src="shared.js" defer></script>
+  </body>
+</html>

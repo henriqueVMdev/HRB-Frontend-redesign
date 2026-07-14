@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="HRB Imports Auto Parts - pecas premium para oficinas, com busca por codigo OEM, marca, modelo e ano."
+      content="HRB Imports Auto Parts - peças premium para oficinas, com busca por código OEM, marca, modelo e ano."
     />
     <title>HRB Imports Auto Parts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,213 +17,251 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <a class="brand" href="#inicio" aria-label="HRB Imports">
-        <img src="assets/top-logo.svg" alt="HRB Imports" />
+    <header class="top-manager">
+      <a class="brand" href="index.html" aria-label="HRB Imports">
+        <img src="assets/figma/header-logo.svg" alt="HRB Imports" />
       </a>
-      <nav class="desktop-nav" aria-label="Principal">
-        <a href="#categorias">Categorias</a>
-        <a href="#mais-vendidos">Mais vendidos</a>
-        <a href="#promocoes">Promocoes</a>
-        <a href="#atendimento">Atendimento</a>
-      </nav>
-      <div class="header-actions">
-        <button class="text-action" type="button" id="cartButton">
-          <span>Meu Carrinho</span>
-          <strong id="cartTotal">R$ 0,00</strong>
+      <div class="top-actions">
+        <button class="top-action" type="button" id="cartButton">
+          <span>Meu Carrinho&nbsp;|&nbsp;<strong id="cartTotal">R$ 0,00</strong></span>
+          <img src="assets/figma/header-cart-icon.svg" alt="" aria-hidden="true" />
         </button>
-        <a class="text-action" href="login.html">Login</a>
-        <button class="menu-button" type="button" id="menuToggle" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="top-action" type="button" id="loginButton">
+          <span>Login</span>
+          <img src="assets/figma/header-user-icon.svg" alt="" aria-hidden="true" />
         </button>
       </div>
     </header>
 
-    <main id="inicio">
+    <main>
       <section class="hero" aria-label="Destaque principal">
-        <img class="hero-image" src="assets/hero-banner.png" alt="Buchas para bracos e bandejas HRB Imports" />
-      </section>
-
-      <section class="search-shell" aria-label="Busca de pecas">
-        <form class="part-search" id="searchForm" action="resultados.html">
-          <label class="full-field">
-            <span>Nome da peca ou codigo original</span>
-            <input id="searchInput" name="search" type="search" placeholder="Ex: Turbocharger Garrett GT35" />
-          </label>
-          <label>
-            <span>Marca</span>
-            <select id="brandSelect" name="brand">
-              <option value="">Todas</option>
-              <option>BMW</option>
-              <option>Mercedes-Benz</option>
-              <option>Audi</option>
-              <option>Volkswagen</option>
-            </select>
-          </label>
-          <label>
-            <span>Modelo</span>
-            <select id="modelSelect" name="model">
-              <option value="">Todos</option>
-              <option>320i</option>
-              <option>X1</option>
-              <option>C180</option>
-              <option>A3</option>
-              <option>Jetta</option>
-            </select>
-          </label>
-          <label>
-            <span>Ano</span>
-            <select id="yearSelect" name="year">
-              <option value="">Todos</option>
-              <option>2024</option>
-              <option>2023</option>
-              <option>2022</option>
-              <option>2021</option>
-              <option>2020</option>
-            </select>
-          </label>
-          <button class="primary-button" type="submit" aria-label="Buscar pecas">
-            <span>Buscar</span>
+        <div class="hero-glow" aria-hidden="true">
+          <img src="assets/figma/hero-banner.png" alt="" />
+        </div>
+        <div class="hero-banner">
+          <img src="assets/figma/hero-banner.png" alt="Buchas para braços e bandejas HRB Imports" />
+        </div>
+        <div class="slider" data-slider="hero">
+          <button class="slider-arrow" type="button" data-dir="-1" aria-label="Banner anterior">
+            <img src="assets/figma/slider-arrow-left.svg" alt="" aria-hidden="true" />
           </button>
+          <div class="slider-dots" data-dots></div>
+          <button class="slider-arrow" type="button" data-dir="1" aria-label="Próximo banner">
+            <img src="assets/figma/slider-arrow-right.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </section>
+
+      <div class="part1">
+        <form class="search-frame reveal" id="searchForm" action="resultados.html">
+          <label class="input-field">
+            <span>Nome da Peça ou Código Original</span>
+            <input id="searchInput" name="q" type="search" placeholder="Ex: Turbocharger Garrett GT35" />
+          </label>
+          <div class="search-row">
+            <label class="input-field">
+              <span>Marca</span>
+              <select id="brandSelect" name="brand">
+                <option value="">Selecione</option>
+                <option>BMW</option>
+                <option>Mercedes-Benz</option>
+                <option>Audi</option>
+                <option>Volkswagen</option>
+              </select>
+            </label>
+            <label class="input-field">
+              <span>Modelo</span>
+              <select id="modelSelect" name="model">
+                <option value="">Selecione</option>
+                <option>320i</option>
+                <option>X1</option>
+                <option>C180</option>
+                <option>A3</option>
+                <option>Jetta</option>
+              </select>
+            </label>
+            <label class="input-field">
+              <span>Ano</span>
+              <select id="yearSelect" name="year">
+                <option value="">Todos</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+              </select>
+            </label>
+            <label class="input-field">
+              <span>Motor</span>
+              <select id="engineSelect" name="engine">
+                <option value="">Todos</option>
+                <option>1.6</option>
+                <option>2.0 Turbo</option>
+                <option>3.0</option>
+              </select>
+            </label>
+            <button class="search-button" type="submit">
+              <img src="assets/figma/search-icon.svg" alt="" aria-hidden="true" />
+              <span>Buscar</span>
+            </button>
+          </div>
         </form>
-      </section>
 
-      <section class="trust-row" aria-label="Beneficios">
-        <article>
-          <span class="benefit-icon">OEM</span>
-          <strong>Peca certa no fit</strong>
-          <small>Validacao por codigo original</small>
-        </article>
-        <article>
-          <span class="benefit-icon">NF</span>
-          <strong>Nota fiscal</strong>
-          <small>Garantia de procedencia</small>
-        </article>
-        <article>
-          <span class="benefit-icon">24h</span>
-          <strong>Envio em ate 24h</strong>
-          <small>Todo o Brasil</small>
-        </article>
-        <article>
-          <span class="benefit-icon">VIP</span>
-          <strong>Oficinas e lojistas</strong>
-          <small>Condicoes especiais</small>
-        </article>
-      </section>
+        <section class="benefits reveal" aria-label="Benefícios">
+          <article class="benefit">
+            <img src="assets/figma/benefit-pix.svg" alt="" aria-hidden="true" />
+            <strong>10% OFF</strong>
+            <small>No PIX</small>
+          </article>
+          <article class="benefit">
+            <img src="assets/figma/benefit-card.svg" alt="" aria-hidden="true" />
+            <strong>Em até 10x</strong>
+            <small>Cartão de Crédito</small>
+          </article>
+          <article class="benefit">
+            <img src="assets/figma/benefit-shipping.svg" alt="" aria-hidden="true" />
+            <strong>Envio Imediato</strong>
+            <small>Todo o Brasil</small>
+          </article>
+          <article class="benefit">
+            <img src="assets/figma/benefit-exchange.svg" alt="" aria-hidden="true" />
+            <strong>Troca / Devolução</strong>
+            <small>Até 30 Dias</small>
+          </article>
+        </section>
 
-      <section class="section-wrap categories-section" id="categorias">
-        <div class="section-title">
-          <span></span>
-          <h1>Categorias em Destaque</h1>
-        </div>
-        <div class="category-grid" id="categoryGrid" aria-label="Filtros de categoria">
-          <button type="button" data-category="Suspensao">Suspensao</button>
-          <button type="button" data-category="Pastilhas de Freio">Pastilhas de Freio</button>
-          <button type="button" data-category="Amortecedores">Amortecedores</button>
-          <button type="button" data-category="Velas de Ignicao">Velas de Ignicao</button>
-          <button type="button" data-category="Bombas de Combustivel">Bombas de Combustivel</button>
-          <button type="button" data-category="Mangueiras">Mangueiras</button>
-          <button type="button" data-category="Discos de Freio">Discos de Freio</button>
-          <button type="button" data-category="">Ver Mais</button>
-        </div>
-      </section>
+        <section class="categories reveal" id="categorias" aria-label="Categorias em destaque">
+          <div class="section-title">
+            <div class="title-row">
+              <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+              <h1>Categorias em Destaque</h1>
+            </div>
+            <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+          </div>
+          <div class="category-buttons">
+            <button class="category-button" type="button" data-category="Suspensão">Suspensão</button>
+            <button class="category-button" type="button" data-category="Pastilhas de Freio">Pastilhas de<br />freio</button>
+            <button class="category-button" type="button" data-category="Amortecedores">Amorte<br />cedores</button>
+            <button class="category-button" type="button" data-category="Velas de Ignição">Velas de<br />ignição</button>
+            <button class="category-button" type="button" data-category="Bombas de Combustível">Bombas de<br />combustível</button>
+            <button class="category-button" type="button" data-category="Mangueiras">Mangueiras</button>
+            <button class="category-button" type="button" data-category="Discos de Freio">Discos de<br />freio</button>
+            <button class="category-button" type="button" data-category="">Ver Mais</button>
+          </div>
+        </section>
+      </div>
 
-      <section class="product-band" id="mais-vendidos">
-        <div class="band-header">
-          <div class="section-title dark">
-            <span></span>
+      <section class="band reveal" id="mais-vendidos" aria-label="Mais vendidos">
+        <div class="section-title dark">
+          <div class="title-row">
+            <img src="assets/figma/title-triangle-black.svg" alt="" aria-hidden="true" />
             <h2>Mais Vendidos</h2>
           </div>
-          <div class="slider-actions">
-            <button type="button" data-scroll="bestSellers" data-direction="-1" aria-label="Voltar mais vendidos">&#8249;</button>
-            <button type="button" data-scroll="bestSellers" data-direction="1" aria-label="Avancar mais vendidos">&#8250;</button>
-          </div>
+          <img class="title-line" src="assets/figma/title-line-black.svg" alt="" aria-hidden="true" />
         </div>
         <div class="product-rail" id="bestSellers"></div>
-      </section>
-
-      <section class="feature-split">
-        <div class="feature-copy">
-          <p>
-            A suspensao e um dos sistemas mais criticos do seu veiculo e qualquer componente fora do ponto compromete a dirigibilidade e a seguranca.
-            Na HRB Imports, voce encontra bracos, bandejas, buchas, terminais e muito mais, com qualidade garantida para quem nao abre mao de fazer o servico certo.
-          </p>
-          <a class="secondary-button" href="#promocoes">Ver mais</a>
+        <div class="slider dark" data-slider="bestSellers">
+          <button class="slider-arrow" type="button" data-dir="-1" aria-label="Voltar mais vendidos">
+            <img src="assets/figma/slider-arrow-left-black.svg" alt="" aria-hidden="true" />
+          </button>
+          <div class="slider-dots" data-dots></div>
+          <button class="slider-arrow" type="button" data-dir="1" aria-label="Avançar mais vendidos">
+            <img src="assets/figma/slider-arrow-right-black.svg" alt="" aria-hidden="true" />
+          </button>
         </div>
-        <img src="assets/banner-suspensao.png" alt="Componentes de suspensao premium" />
+        <div class="band-fade" aria-hidden="true"></div>
       </section>
 
-      <section class="product-band" id="promocoes">
-        <div class="band-header">
-          <div class="section-title dark">
-            <span></span>
-            <h2>Promocoes</h2>
+      <section class="separator reveal" aria-label="Suspensão">
+        <div class="separator-copy">
+          <p>
+            A suspensão é um dos sistemas mais críticos do seu veículo e qualquer componente fora do ponto compromete a
+            dirigibilidade e a segurança. Na HRB Imports, você encontra braços, bandejas, buchas, terminais e muito mais,
+            com qualidade garantida para quem não abre mão de fazer o serviço certo.
+          </p>
+          <a class="yellow-button" href="resultados.html?category=Suspens%C3%A3o">Ver mais</a>
+        </div>
+        <div class="separator-banner">
+          <img src="assets/figma/banner-suspensao.png" alt="Componentes de suspensão premium" />
+        </div>
+      </section>
+
+      <section class="band reveal" id="promocoes" aria-label="Promoções">
+        <div class="section-title dark">
+          <div class="title-row">
+            <img src="assets/figma/title-triangle-black.svg" alt="" aria-hidden="true" />
+            <h2>Promoções</h2>
           </div>
-          <div class="slider-actions">
-            <button type="button" data-scroll="promotions" data-direction="-1" aria-label="Voltar promocoes">&#8249;</button>
-            <button type="button" data-scroll="promotions" data-direction="1" aria-label="Avancar promocoes">&#8250;</button>
-          </div>
+          <img class="title-line" src="assets/figma/title-line-black.svg" alt="" aria-hidden="true" />
         </div>
         <div class="product-rail" id="promotions"></div>
+        <div class="slider dark" data-slider="promotions">
+          <button class="slider-arrow" type="button" data-dir="-1" aria-label="Voltar promoções">
+            <img src="assets/figma/slider-arrow-left-black.svg" alt="" aria-hidden="true" />
+          </button>
+          <div class="slider-dots" data-dots></div>
+          <button class="slider-arrow" type="button" data-dir="1" aria-label="Avançar promoções">
+            <img src="assets/figma/slider-arrow-right-black.svg" alt="" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="band-fade" aria-hidden="true"></div>
       </section>
 
-      <section class="delivery-block" id="atendimento">
-        <img src="assets/delivery.png" alt="Carrinho com pecas automotivas HRB Imports" />
+      <section class="robot-cta reveal" aria-label="Entrega rápida">
+        <img src="assets/figma/robot.png" alt="Robô HRB com carrinho de peças" />
         <p>
-          Na HRB Imports, a gente entende que tempo e dinheiro. Por isso, todos os pedidos sao processados com agilidade,
-          embalados com cuidado e despachados com rastreamento completo para que a peca certa chegue ate voce o mais rapido possivel.
+          Na HRB Imports, a gente entende que tempo é dinheiro. Por isso, todos os pedidos são processados com agilidade,
+          embalados com cuidado e despachados com rastreamento completo, para que a peça certa chegue até você o mais
+          rápido possível, sem dor de cabeça.
         </p>
       </section>
     </main>
 
-    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-      <div class="cart-panel">
-        <button type="button" class="close-cart" id="closeCart" aria-label="Fechar carrinho">&times;</button>
-        <h2>Carrinho</h2>
-        <div id="cartItems" class="cart-items"></div>
-        <div class="cart-summary">
-          <span>Total</span>
-          <strong id="drawerTotal">R$ 0,00</strong>
-        </div>
-        <a class="primary-button full" href="checkout.html">
-          Finalizar compra
-        </a>
-      </div>
-    </aside>
-
     <footer class="footer">
-      <section>
-        <img src="assets/logo.svg" alt="HRB Imports" />
-        <p>A distribuidora de confianca para quem exige pecas premium e precisao na aplicacao.</p>
-        <small>CNPJ: 32.162.376/0001-99<br />Hortolandia - SP</small>
+      <section class="footer-brand">
+        <img class="footer-logo" src="assets/figma/footer-logo.svg" alt="HRB Imports" />
+        <p>
+          A distribuidora de confiança para quem exige peças premium e precisão na aplicação. Do nosso estoque direto
+          para a sua oficina.
+        </p>
+        <small>CNPJ: 32.162.376/0001-99<br />Hortolândia - SP</small>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><img src="assets/figma/social-1.svg" alt="" /></a>
+          <a href="#" aria-label="Facebook"><img src="assets/figma/social-2.svg" alt="" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="assets/figma/social-3.svg" alt="" /></a>
+        </div>
       </section>
-      <section>
-        <h2>Links</h2>
-        <a href="#categorias">Freios & Suspensao</a>
-        <a href="#categorias">Motor & Arrefecimento</a>
-        <a href="#categorias">Filtros & Lubrificantes</a>
-        <a href="#promocoes">Ofertas para Oficinas</a>
-      </section>
-      <section>
-        <h2>Atendimento e suporte</h2>
-        <a href="#atendimento">Politica de trocas</a>
-        <a href="#atendimento">Prazos e frete expresso</a>
-        <a href="#inicio">Sobre a HRB Imports</a>
-        <a href="#atendimento">Fale com um especialista</a>
-      </section>
-      <section>
-        <h2>Acesso VIP para oficinas</h2>
-        <p>Cadastre seu e-mail ou WhatsApp e receba condicoes exclusivas e novidades de estoque.</p>
-        <form class="newsletter" id="newsletterForm">
-          <input type="text" name="contact" placeholder="Email ou WhatsApp" aria-label="Email ou WhatsApp" />
-          <button type="submit" aria-label="Cadastrar">&gt;</button>
-        </form>
-        <small id="newsletterMessage">2026 HRB Imports Auto Parts. Todos os direitos reservados.</small>
-      </section>
+      <div class="footer-cols">
+        <section class="footer-col">
+          <h4>Links</h4>
+          <a href="resultados.html?category=Pastilhas%20de%20Freio">Freios &amp; Suspensão</a>
+          <a href="resultados.html?category=Mangueiras">Motor &amp; Arrefecimento</a>
+          <a href="resultados.html">Filtros &amp; Lubrificantes</a>
+          <a href="resultados.html">Marcas Atendidas (BMW, Mercedes, Audi...)</a>
+          <a href="index.html#promocoes">Ofertas para Oficinas</a>
+        </section>
+        <section class="footer-col">
+          <h4>Atendimento e Suporte</h4>
+          <a href="#">Política de Trocas e Devoluções</a>
+          <a href="#">Prazos e Frete Expresso</a>
+          <a href="#">Sobre a HRB Imports</a>
+          <a href="#">Fale com um Especialista</a>
+        </section>
+        <section class="footer-col">
+          <h4>Acesso VIP para Oficinas</h4>
+          <p>Cadastre seu e-mail ou WhatsApp e receba condições exclusivas, novidades de estoque.</p>
+          <form class="newsletter" id="newsletterForm">
+            <input type="text" name="contact" placeholder="Email address" aria-label="Email ou WhatsApp" />
+            <button type="submit" aria-label="Cadastrar">
+              <img src="assets/figma/send-arrow.svg" alt="" aria-hidden="true" />
+            </button>
+          </form>
+          <span class="footer-copy" id="newsletterMessage">© 2026 HRB Imports Auto Parts. All Rights Reserved.</span>
+        </section>
+      </div>
     </footer>
 
+    <script src="shared.js" defer></script>
     <script src="app.js" defer></script>
   </body>
 </html>

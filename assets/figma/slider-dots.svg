@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 124 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Lay.Slider">
+<path d="M0 14C0 6.26801 6.26801 0 14 0H110C117.732 0 124 6.26801 124 14V14C124 21.732 117.732 28 110 28H14C6.26802 28 0 21.732 0 14V14Z" fill="var(--fill-0, #C8C8C8)" fill-opacity="0.48"/>
+<path d="M14 0.5H110C117.456 0.500001 123.5 6.54416 123.5 14C123.5 21.4558 117.456 27.5 110 27.5H14C6.54416 27.5 0.5 21.4558 0.5 14C0.5 6.54416 6.54416 0.5 14 0.5Z" stroke="var(--stroke-0, white)" stroke-opacity="0.5"/>
+<circle id="Ellipse 2" cx="18" cy="14" r="6" fill="var(--fill-0, white)"/>
+<circle id="Ellipse 3" cx="40" cy="14" r="6" fill="var(--fill-0, white)" fill-opacity="0.5"/>
+<circle id="Ellipse 4" cx="62" cy="14" r="6" fill="var(--fill-0, white)" fill-opacity="0.5"/>
+<circle id="Ellipse 5" cx="84" cy="14" r="6" fill="var(--fill-0, white)" fill-opacity="0.5"/>
+<circle id="Ellipse 6" cx="106" cy="14" r="6" fill="var(--fill-0, white)" fill-opacity="0.5"/>
+</g>
+</svg>

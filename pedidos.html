@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Minhas compras - HRB Imports Auto Parts." />
+    <title>Minhas Compras — HRB Imports Auto Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-manager">
+      <a class="brand" href="index.html" aria-label="HRB Imports">
+        <img src="assets/figma/header-logo.svg" alt="HRB Imports" />
+      </a>
+      <div class="top-actions">
+        <button class="top-action" type="button" id="cartButton">
+          <span>Meu Carrinho&nbsp;|&nbsp;<strong id="cartTotal">R$ 0,00</strong></span>
+          <img src="assets/figma/header-cart-icon.svg" alt="" aria-hidden="true" />
+        </button>
+        <a class="top-action" href="conta.html">
+          <span>João</span>
+          <img src="assets/figma/header-user-icon.svg" alt="" aria-hidden="true" />
+        </a>
+      </div>
+    </header>
+
+    <main class="orders-page">
+      <section class="orders-panel reveal is-visible">
+        <div class="section-title">
+          <div class="title-row">
+            <img src="assets/figma/title-triangle-yellow.svg" alt="" aria-hidden="true" />
+            <h1>Minhas Compras</h1>
+          </div>
+          <img class="title-line" src="assets/figma/title-line-yellow.svg" alt="" aria-hidden="true" />
+        </div>
+
+        <article class="order-card">
+          <a class="order-image" href="produto.html?id=hrb-11428585235">
+            <img src="assets/figma/produto.png" alt="Trocador de calor" />
+          </a>
+          <div class="order-info">
+            <h2>TROCADOR DE CALOR C/ SUPORTE FILTRO OLEO ALUMINIO</h2>
+            <div class="result-price small">
+              <span>R$</span><strong>1.170</strong><em>,90</em>
+            </div>
+          </div>
+          <div class="order-status">
+            <strong class="status-label delivered">Entregue</strong>
+            <a href="#">Ver detalhes</a>
+          </div>
+        </article>
+
+        <article class="order-card">
+          <a class="order-image" href="produto.html?id=hrb-11428585235">
+            <img src="assets/figma/produto.png" alt="Trocador de calor" />
+          </a>
+          <div class="order-info">
+            <h2>TROCADOR DE CALOR C/ SUPORTE FILTRO OLEO ALUMINIO</h2>
+            <div class="result-price small">
+              <span>R$</span><strong>1.170</strong><em>,90</em>
+            </div>
+          </div>
+          <div class="order-status">
+            <strong class="status-label shipping">A caminho</strong>
+            <a href="#">Rastreio do pacote</a>
+          </div>
+        </article>
+
+        <p class="whatsapp-note">
+          Qualquer dúvida nos chame no WhatsApp
+          <a href="https://wa.me/5519981763432" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <img src="assets/figma/whatsapp.png" alt="" aria-hidden="true" />
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <script src="shared.js" defer></script>
+  </body>
+</html>

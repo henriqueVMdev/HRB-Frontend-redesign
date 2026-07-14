@@ -1,103 +1,11 @@
-const currency = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-});
-const CART_STORAGE_KEY = "hrb-cart";
+/* Resultados — filtros + cards horizontais (usa catálogo/carrinho do shared.js) */
 
-const products = [
-  {
-    id: "hrb-11428585235",
-    name: "Trocador de calor c/ suporte filtro oleo aluminio",
-    oem: "11428585235",
-    sku: "HRB12C12OC",
-    tag: "Trocador de Calor",
-    brand: "BMW",
-    model: "320i",
-    year: "2021",
-    category: "Motor",
-    maker: "HRB",
-    price: 1170.9,
-    pixPrice: 1060.99,
-    image: "assets/result-product.png",
-  },
-  {
-    id: "hrb-11428585235-b",
-    name: "Trocador de calor c/ suporte filtro oleo aluminio",
-    oem: "11428585235",
-    sku: "HRB12C12OC",
-    tag: "Trocador de Calor",
-    brand: "BMW",
-    model: "X1",
-    year: "2022",
-    category: "Suspensao dianteira",
-    maker: "Bosch",
-    price: 1170.9,
-    pixPrice: 1060.99,
-    image: "assets/result-product.png",
-  },
-  {
-    id: "hrb-11428585235-c",
-    name: "Trocador de calor c/ suporte filtro oleo aluminio",
-    oem: "11428585235",
-    sku: "HRB12C12OC",
-    tag: "Trocador de Calor",
-    brand: "Audi",
-    model: "A3",
-    year: "2023",
-    category: "Sistema de Freio",
-    maker: "Febi",
-    price: 1170.9,
-    pixPrice: 1060.99,
-    image: "assets/result-product.png",
-  },
-  {
-    id: "hrb-11428585235-d",
-    name: "Trocador de calor c/ suporte filtro oleo aluminio",
-    oem: "11428585235",
-    sku: "HRB12C12OC",
-    tag: "Trocador de Calor",
-    brand: "Mercedes-Benz",
-    model: "C180",
-    year: "2024",
-    category: "Suspensao traseira",
-    maker: "Hengst",
-    price: 1170.9,
-    pixPrice: 1060.99,
-    image: "assets/result-product.png",
-  },
-];
-
-const cart = new Map(loadStoredCart());
 const form = document.querySelector("#resultsFilterForm");
 const resultsList = document.querySelector("#resultsList");
-const headerTotal = document.querySelector("#resultsHeaderTotal");
+const brandLogo = document.querySelector("#brandLogo");
 
-function loadStoredCart() {
-  try {
-    return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
-  } catch {
-    return [];
-  }
-}
-
-function saveStoredCart() {
-  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([...cart.entries()]));
-}
-
-function productById(id) {
-  return products.find((product) => product.id === id);
-}
-
-function cartTotalValue() {
-  return [...cart.entries()].reduce((total, [id, quantity]) => {
-    const product = productById(id);
-    return total + (product ? product.price * quantity : 0);
-  }, 0);
-}
-
-function updateHeaderTotal() {
-  headerTotal.textContent = currency.format(cartTotalValue());
-}
+/* ponytail: só temos o logo BMW no design; outros escondem a imagem */
+const brandLogos = { BMW: "assets/figma/brand-bmw.svg" };
 
 function getCheckedValues(name) {
   return [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
@@ -110,6 +18,7 @@ function getFilters() {
     brand: String(data.get("brand") || ""),
     model: String(data.get("model") || ""),
     year: String(data.get("year") || ""),
+    engine: String(data.get("engine") || ""),
     categories: getCheckedValues("category"),
     makers: getCheckedValues("maker"),
     minPrice: Number(data.get("minPrice") || 0),
@@ -121,57 +30,71 @@ function filteredProducts() {
   const filters = getFilters();
 
   return products.filter((product) => {
-    const text = `${product.name} ${product.oem} ${product.sku} ${product.tag}`.toLowerCase();
-    const matchesText = !filters.q || text.includes(filters.q);
-    const matchesBrand = !filters.brand || product.brand === filters.brand;
-    const matchesModel = !filters.model || product.model === filters.model;
-    const matchesYear = !filters.year || product.year === filters.year;
-    const matchesCategory = !filters.categories.length || filters.categories.includes(product.category);
-    const matchesMaker = !filters.makers.length || filters.makers.includes(product.maker);
-    const matchesMin = !filters.minPrice || product.price >= filters.minPrice;
-    const matchesMax = !filters.maxPrice || product.price <= filters.maxPrice;
-
-    return matchesText && matchesBrand && matchesModel && matchesYear && matchesCategory && matchesMaker && matchesMin && matchesMax;
+    const text = `${product.name} ${product.oem} ${product.sku} ${product.tag} ${product.category}`.toLowerCase();
+    return (
+      (!filters.q || text.includes(filters.q)) &&
+      (!filters.brand || product.brand === filters.brand) &&
+      (!filters.model || product.model === filters.model) &&
+      (!filters.year || product.year === filters.year) &&
+      (!filters.engine || product.engine === filters.engine) &&
+      (!filters.categories.length || filters.categories.includes(product.category)) &&
+      (!filters.makers.length || filters.makers.includes(product.maker)) &&
+      (!filters.minPrice || product.price >= filters.minPrice) &&
+      (!filters.maxPrice || product.price <= filters.maxPrice)
+    );
   });
 }
 
+function priceParts(value) {
+  const integerPart = Math.floor(value).toLocaleString("pt-BR");
+  const cents = String(Math.round((value % 1) * 100)).padStart(2, "0");
+  return { integerPart, cents };
+}
+
 function resultCard(product) {
-  const integerPart = Math.floor(product.price).toLocaleString("pt-BR");
-  const cents = String(Math.round((product.price % 1) * 100)).padStart(2, "0");
+  const { integerPart, cents } = priceParts(product.price);
+  const installment = (product.price / 10).toLocaleString("pt-BR", { minimumFractionDigits: 2 });
 
   return `
-    <article class="result-card">
-      <a class="result-image" href="produto.html?id=${product.id}">
-        <img src="${product.image}" alt="${product.name}" />
-        <span>${product.tag}</span>
+    <article class="result-card reveal is-visible">
+      <a class="result-image" href="produto.html?id=${product.id}" aria-label="${product.name}">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" />
+        <span class="card-tag">${product.tag}</span>
       </a>
       <div class="result-info">
-        <div>
+        <div class="result-headline">
           <h2><a href="produto.html?id=${product.id}">${product.name}</a></h2>
           <div class="result-meta">
             <span>OEM: ${product.oem}</span>
-            <b></b>
+            <i></i>
             <span>SKU: ${product.sku}</span>
           </div>
         </div>
-        <p class="stock-dot">Em estoque - Envio imediato</p>
+        <p class="stock-row"><span class="stock-dot"></span>Em estoque - Envio imediato</p>
       </div>
       <div class="result-buy">
-        <div class="result-price" aria-label="${currency.format(product.price)}">
-          <span>R$</span>
-          <strong>${integerPart}</strong>
-          <em>,${cents}</em>
+        <div class="result-pricing">
+          <div class="result-price" aria-label="${currency.format(product.price)}">
+            <span>R$</span>
+            <strong>${integerPart}</strong>
+            <em>,${cents}</em>
+          </div>
+          <p class="installment">ou 10x de ${installment}</p>
+          <div class="pix-row">
+            <span class="pix-badge">Pix</span>
+            <strong>${currency.format(pixPrice(product))} à vista</strong>
+          </div>
         </div>
-        <p>ou 10x de ${currency.format(product.price / 10).replace("R$", "")}</p>
-        <div class="pix-row"><span>Pix</span><strong>${currency.format(product.pixPrice)} a vista</strong></div>
-        <button type="button" data-add="${product.id}">
-          <img src="assets/result-add-icon.svg" alt="" />
-          Adicionar
-        </button>
-        <button class="favorite-button" type="button">
-          <img src="assets/result-favorite.svg" alt="" />
-          Favoritar
-        </button>
+        <div class="result-actions">
+          <button class="yellow-button add-button" type="button" data-add="${product.id}">
+            <img src="assets/figma/cart-icon-24.svg" alt="" aria-hidden="true" />
+            Adicionar
+          </button>
+          <button class="favorite-button" type="button" data-favorite>
+            <img src="assets/figma/heart.svg" alt="" aria-hidden="true" />
+            Favoritar
+          </button>
+        </div>
       </div>
     </article>
   `;
@@ -186,15 +109,24 @@ function renderResults() {
 
 function applyQueryParams() {
   const params = new URLSearchParams(window.location.search);
-  const query = params.get("q");
-  const brand = params.get("brand");
-  const model = params.get("model");
-  const year = params.get("year");
+  for (const key of ["q", "brand", "model", "year", "engine"]) {
+    const value = params.get(key);
+    if (value && form.elements[key]) form.elements[key].value = value;
+  }
+  const category = params.get("category");
+  if (category) {
+    form.querySelectorAll('input[name="category"]').forEach((input) => {
+      input.checked = input.value === category;
+    });
+  }
+  updateBrandLogo();
+}
 
-  if (query) form.elements.q.value = query;
-  if (brand) form.elements.brand.value = brand;
-  if (model) form.elements.model.value = model;
-  if (year) form.elements.year.value = year;
+function updateBrandLogo() {
+  const brand = form.elements.brand.value;
+  const logo = brandLogos[brand];
+  brandLogo.src = logo || "";
+  brandLogo.style.visibility = logo ? "visible" : "hidden";
 }
 
 form.addEventListener("submit", (event) => {
@@ -202,21 +134,21 @@ form.addEventListener("submit", (event) => {
   renderResults();
 });
 
+form.addEventListener("change", (event) => {
+  if (event.target.name === "brand") updateBrandLogo();
+  renderResults(); /* filtros reativos: aplica ao mudar */
+});
+
 document.querySelector("#clearResultsFilters").addEventListener("click", () => {
   form.reset();
-  form.elements.q.value = "Trocador de Calor";
+  updateBrandLogo();
   renderResults();
 });
 
 document.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add]");
-  if (!addButton) return;
-
-  cart.set(addButton.dataset.add, (cart.get(addButton.dataset.add) || 0) + 1);
-  saveStoredCart();
-  updateHeaderTotal();
+  const favorite = event.target.closest("[data-favorite]");
+  if (favorite) favorite.classList.toggle("is-active");
 });
 
 applyQueryParams();
 renderResults();
-updateHeaderTotal();

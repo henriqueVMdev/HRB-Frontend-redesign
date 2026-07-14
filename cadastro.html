@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Criar conta na HRB Imports para receber ofertas exclusivas e comprar pecas premium."
-    />
-    <title>Criar Conta | HRB Imports</title>
+    <meta name="description" content="Crie sua conta HRB Imports e aproveite ofertas exclusivas." />
+    <title>Criar Conta — HRB Imports Auto Parts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,72 +13,68 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="signup-page">
-    <main class="signup-main">
-      <section class="signup-card" aria-labelledby="signupTitle">
-        <a class="signup-logo" href="index.html" aria-label="Voltar para HRB Imports">
-          <img src="assets/signup-logo.svg" alt="HRB Imports Auto Parts" />
-        </a>
-
-        <header class="signup-heading">
-          <h1 id="signupTitle">Criar Conta</h1>
+  <body>
+    <main class="signup-page">
+      <section class="signup-card reveal is-visible">
+        <div class="signup-head">
+          <img class="signup-logo" src="assets/figma/signup-logo.svg" alt="HRB Imports" />
+          <h1>Criar Conta</h1>
           <p>Cadastre-se e aproveite ofertas exclusivas</p>
-        </header>
+        </div>
 
         <form class="signup-form" id="signupForm">
-          <label class="wide">
+          <label class="input-field boxed plain light-label">
             <span>Nome Completo</span>
-            <input type="text" name="fullName" placeholder="Ex: Henrique de Paula" autocomplete="name" required />
+            <input type="text" name="name" placeholder="Ex: Henrique de Paula" required />
           </label>
-
-          <label class="wide">
+          <label class="input-field boxed plain light-label">
             <span>E-mail</span>
-            <input type="email" name="email" placeholder="Ex: example@exemplo.com" autocomplete="email" required />
+            <input type="email" name="email" placeholder="Ex: example@exemplo.com" required />
           </label>
-
-          <label>
-            <span>Telefone / WhatsApp</span>
-            <input type="tel" name="phone" placeholder="(11) 99999-9999" autocomplete="tel" required />
-          </label>
-
-          <label>
-            <span>CPF / CNPJ</span>
-            <input type="text" name="document" placeholder="000.000.000-00" required />
-          </label>
-
-          <label>
-            <span>Senha</span>
-            <input type="password" name="password" placeholder="*********" autocomplete="new-password" required />
-          </label>
-
-          <label>
-            <span>Confirmar Senha</span>
-            <input type="password" name="confirmPassword" placeholder="*********" autocomplete="new-password" required />
-          </label>
+          <div class="form-row">
+            <label class="input-field boxed plain light-label">
+              <span>Telefone / WhatsApp</span>
+              <input type="tel" name="phone" placeholder="(11) 99999-9999" required />
+            </label>
+            <label class="input-field boxed plain light-label">
+              <span>CPF / CNPJ</span>
+              <input type="text" name="document" placeholder="000.000.000-00" required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="input-field boxed plain light-label">
+              <span>Senha</span>
+              <input type="password" name="password" placeholder="*********" minlength="6" required />
+            </label>
+            <label class="input-field boxed plain light-label">
+              <span>Confirmar Senha</span>
+              <input type="password" name="confirmPassword" placeholder="*********" minlength="6" required />
+            </label>
+          </div>
 
           <label class="terms-row">
             <input type="checkbox" name="terms" required />
-            <span>Aceito os <a href="#">Termos de Uso</a> e <a href="#">Politica de Privacidade</a></span>
+            <span>Aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></span>
           </label>
 
-          <button class="signup-submit" type="submit">Cadastrar</button>
+          <button class="yellow-button signup-submit" type="submit">Cadastrar</button>
+
+          <a class="signup-login-link" href="index.html#login">
+            Já tem uma conta? Faça Login
+            <img src="assets/figma/arrow-right.svg" alt="" aria-hidden="true" />
+          </a>
+          <p class="signup-message" id="signupMessage" role="status"></p>
         </form>
 
-        <a class="signup-login" href="login.html">
-          Ja tem uma conta? Faca Login
-          <img src="assets/signup-arrow.svg" alt="" aria-hidden="true" />
-        </a>
-
-        <div class="signup-trust" aria-label="Beneficios do cadastro">
-          <span>Dados protegidos <img src="assets/signup-lock.svg" alt="" /></span>
-          <span>Para oficinas e compradores <img src="assets/signup-car.svg" alt="" /></span>
-          <span><img src="assets/signup-check.svg" alt="" /> Cadastro gratuito</span>
+        <div class="signup-trust">
+          <span>Dados protegidos <img src="assets/figma/lock-icon.svg" alt="" aria-hidden="true" /></span>
+          <span>Para oficinas e compradores <img src="assets/figma/car-small.svg" alt="" aria-hidden="true" /></span>
+          <span><img src="assets/figma/check-icon.svg" alt="" aria-hidden="true" /> Cadastro gratuito</span>
         </div>
-
-        <p class="signup-message" id="signupMessage" role="status"></p>
       </section>
     </main>
 
+    <script src="shared.js" defer></script>
     <script src="cadastro.js" defer></script>
   </body>
 </html>
