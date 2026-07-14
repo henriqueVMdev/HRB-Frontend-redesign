@@ -813,7 +813,7 @@ a {
 .separator-banner {
   flex: 1;
   min-width: 0;
-  height: 386px;
+  aspect-ratio: 1500 / 375; /* proporção da arte, sem cortar o texto */
   border-radius: 12px 12px 0 0;
   overflow: hidden;
 }
