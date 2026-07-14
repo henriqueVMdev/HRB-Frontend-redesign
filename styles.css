@@ -37,6 +37,13 @@ body {
   background: url("assets/topolog_white.svg") center / 601px 601px, var(--bg);
   color: var(--white);
   font-family: "Montserrat", Arial, sans-serif;
+  user-select: none;
+}
+
+/* seleção continua funcionando onde o usuário digita */
+input,
+textarea {
+  user-select: text;
 }
 
 body > main {
@@ -46,6 +53,7 @@ body > main {
 img {
   display: block;
   max-width: 100%;
+  -webkit-user-drag: none;
 }
 
 button,

@@ -487,6 +487,9 @@ document.addEventListener("click", (event) => {
   if (removeButton) removeFromCart(removeButton.dataset.remove);
 });
 
+/* impede o "fantasma" de arrastar imagens/links (Firefox não respeita user-drag via CSS) */
+document.addEventListener("dragstart", (event) => event.preventDefault());
+
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   closeCartDrawer();
