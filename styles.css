@@ -213,6 +213,8 @@ a {
 .hero-track.is-dragging {
   cursor: grabbing;
   scroll-behavior: auto;
+  /* sem isto o snap "gruda" o scroll e o arraste não anda */
+  scroll-snap-type: none;
 }
 
 .hero-track img {
@@ -250,6 +252,11 @@ a {
 .slider-arrow img {
   width: 100%;
   height: 100%;
+}
+
+/* o SVG exportado das duas setas aponta pro mesmo lado; espelha a da direita */
+.slider-arrow[data-dir="1"] img {
+  transform: scaleX(-1);
 }
 
 .slider-dots {
@@ -581,7 +588,9 @@ a {
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding-bottom: 4px;
+  /* respiro no topo: o hover levanta o card 8px e o overflow do trilho cortava */
+  padding: 16px 0 4px;
+  margin-top: -16px;
   cursor: grab;
 }
 
@@ -2471,7 +2480,8 @@ a {
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 16px;
+  padding: 16px 0 16px;
+  margin-top: -16px;
 }
 
 /* barra de rolagem clara como no Figma */
