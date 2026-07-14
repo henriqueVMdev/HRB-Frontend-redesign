@@ -747,9 +747,14 @@ a {
 
 .separator {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 33px;
-  padding: 32px 24px;
+  padding: 32px 24px 0;
+}
+
+/* banner gruda na faixa amarela logo abaixo — sem fresta preta no hover */
+.separator + .band {
+  margin-top: 0;
 }
 
 .separator-copy {
@@ -758,6 +763,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  align-self: center;
+  padding-bottom: 32px;
 }
 
 .separator-copy p {
@@ -799,7 +806,7 @@ a {
   flex: 1;
   min-width: 0;
   height: 386px;
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
 }
 
