@@ -509,15 +509,34 @@ a {
   filter: drop-shadow(var(--band-shadow));
 }
 
+.rail-wrap {
+  position: relative;
+}
+
+/* Dica de overflow: só aparece quando há cards cortados naquele lado */
 .band-fade {
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
-  width: 232px;
-  background: linear-gradient(to right, rgba(255, 215, 0, 0) 0%, var(--yellow) 59.6%);
+  width: 120px;
   pointer-events: none;
   z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.band-fade.right {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 215, 0, 0) 0%, rgba(255, 215, 0, 0.92) 85%);
+}
+
+.band-fade.left {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 215, 0, 0) 0%, rgba(255, 215, 0, 0.92) 85%);
+}
+
+.band-fade.is-visible {
+  opacity: 1;
 }
 
 .product-rail {
@@ -528,6 +547,17 @@ a {
   scroll-behavior: smooth;
   scrollbar-width: none;
   padding-bottom: 4px;
+  cursor: grab;
+}
+
+.product-rail.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  user-select: none;
+}
+
+.product-rail.is-dragging .card {
+  pointer-events: none;
 }
 
 .product-rail::-webkit-scrollbar {
@@ -2420,6 +2450,17 @@ a {
 .checkout-rail {
   scrollbar-color: #9d9d9d var(--white);
   scrollbar-width: thin;
+  cursor: grab;
+}
+
+.checkout-rail.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  user-select: none;
+}
+
+.checkout-rail.is-dragging .card {
+  pointer-events: none;
 }
 
 .checkout-card .card-text {

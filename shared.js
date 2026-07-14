@@ -375,6 +375,75 @@ function setupSliders() {
   });
 }
 
+/* ---------------- Fades de overflow (dica de "tem mais cards") ---------------- */
+
+function setupRailFades() {
+  document.querySelectorAll(".rail-wrap").forEach((wrap) => {
+    const rail = wrap.querySelector(".product-rail");
+    const left = wrap.querySelector(".band-fade.left");
+    const right = wrap.querySelector(".band-fade.right");
+    if (!rail) return;
+
+    function update() {
+      const max = rail.scrollWidth - rail.clientWidth;
+      if (left) left.classList.toggle("is-visible", rail.scrollLeft > 8);
+      if (right) right.classList.toggle("is-visible", max - rail.scrollLeft > 8);
+    }
+
+    rail.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+    new ResizeObserver(update).observe(rail);
+    new MutationObserver(update).observe(rail, { childList: true });
+    update();
+  });
+}
+
+/* ---------------- Arrastar trilhos com o mouse ---------------- */
+
+function setupDragScroll() {
+  document.querySelectorAll(".product-rail, .checkout-rail").forEach((rail) => {
+    let startX = 0;
+    let startScroll = 0;
+    let dragging = false;
+    let moved = false;
+
+    rail.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse") return; /* touch já rola nativamente */
+      dragging = true;
+      moved = false;
+      startX = event.clientX;
+      startScroll = rail.scrollLeft;
+    });
+
+    window.addEventListener("pointermove", (event) => {
+      if (!dragging) return;
+      const delta = event.clientX - startX;
+      if (Math.abs(delta) > 5 && !moved) {
+        moved = true;
+        rail.classList.add("is-dragging");
+      }
+      if (moved) rail.scrollLeft = startScroll - delta;
+    });
+
+    window.addEventListener("pointerup", () => {
+      if (!dragging) return;
+      dragging = false;
+      rail.classList.remove("is-dragging");
+    });
+
+    /* se arrastou, o clique que vem depois não deve abrir o produto */
+    rail.addEventListener(
+      "click",
+      (event) => {
+        if (!moved) return;
+        moved = false;
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      true,
+    );
+  });
+}
+
 /* ---------------- Reveal on scroll ---------------- */
 
 function setupReveal() {
@@ -465,6 +534,8 @@ function setupChrome() {
 
   renderCart();
   setupSliders();
+  setupRailFades();
+  setupDragScroll();
   setupReveal();
 
   /* #login na URL abre o popup (ex.: link "Faça Login" do cadastro) */
